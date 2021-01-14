@@ -23,7 +23,7 @@ namespace FORM
         }
         DataSet dsToday;
         int cCount = 0, NRatioYes = 0, inTavgRatioToday, inTavgRatioYes, NRatioToDay = 0;
-        bool flag1, flag2, isToday = false;
+        bool flag1, flag2,isToday=false;
         string _LINE = "001", _MLINE = "001", _DATE = DateTime.Now.ToString("yyyyMMdd"); //default
         #region Db
         private DataSet Sel_Data_Chart(string Proc_Name, string V_P_LINE, string V_P_MLINE, string V_P_DATE)
@@ -111,67 +111,29 @@ namespace FORM
 
         }
 
-        private void BindingChart1(DataSet dt, int isToday) //1 today , 2 yesterday, 3 all
+        private void BindingChart1(DataSet dt, bool isToday)
         {
             try
             {
                 dsToday = dt;
-                inTavgRatioToday = 0; inTavgRatioYes = 0;
-                if (isToday == 1)
+                if (isToday)
                     if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").Count() > 0)
                     {
                         chartControl1.DataSource = dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").CopyToDataTable();
-                        inTavgRatioToday = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='TODAY'"));
-                        if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").Count() > 0)
-                            inTavgRatioYes = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='YESTERDAY'"));
-                    }
-                    else
-                        chartControl1.DataSource = null;
-                else if (isToday == 2)
-                    if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").Count() > 0)
-                    {
-                        chartControl1.DataSource = dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").CopyToDataTable();
-                        inTavgRatioYes = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='YESTERDAY'"));
-                        if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").Count() > 0)
-                            inTavgRatioToday = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='TODAY'"));
-
                     }
                     else
                         chartControl1.DataSource = null;
                 else
-                {
-
                     if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").Count() > 0)
                     {
                         chartControl1.DataSource = dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").CopyToDataTable();
-                        inTavgRatioYes = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='YESTERDAY'"));
-                        if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").Count() > 0)
-                            inTavgRatioToday = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='TODAY'"));
-
-                        lblToday_Label.BackColor = Color.Transparent;
-                        btnYesterday.Appearance.BackColor = Color.Orange;
-                        btnYesterday.Appearance.BackColor2 = Color.Orange;
-                        btnToday.Appearance.BackColor = Color.LightSteelBlue;
-                        btnToday.Appearance.BackColor2 = Color.LightSteelBlue;
                     }
-                    if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").Count() > 0)
-                    {
-                        chartControl1.DataSource = dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "TODAY").CopyToDataTable();
-                        inTavgRatioToday = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='TODAY'"));
-                        if (dt.Tables[0].AsEnumerable().Where(r => r.Field<string>("YT") == "YESTERDAY").Count() > 0)
-                            inTavgRatioYes = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='YESTERDAY'"));
+                    else
+                        chartControl1.DataSource = null;
 
-                        lblYesterday_Label.BackColor = Color.Transparent;
-                        btnToday.Appearance.BackColor = Color.Orange;
-                        btnToday.Appearance.BackColor2 = Color.Orange;
-                        btnYesterday.Appearance.BackColor = Color.LightSteelBlue;
-                        btnYesterday.Appearance.BackColor2 = Color.LightSteelBlue;
-                    }
-                }
-
-
-
-
+                inTavgRatioToday = 0; inTavgRatioYes = 0;
+                inTavgRatioToday = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='TODAY'"));
+                inTavgRatioYes = Convert.ToInt32(dt.Tables[0].Compute("AVG(RATIO)", "YT='YESTERDAY'"));
                 //Reset Number
                 NRatioYes = 0;
                 NRatioToDay = 0;
@@ -196,10 +158,10 @@ namespace FORM
                 chartControl1.SeriesTemplate.ArgumentDataMember = "TRIP";
                 chartControl1.SeriesTemplate.ValueDataMembers.AddRange(new string[] { "QTY" });
                 chartControl1.SeriesTemplate.Label.TextPattern = "{V:#,#}";
-                //  chartControl1.SeriesTemplate.ChangeView(DevExpress.XtraCharts.ViewType.Spline);
-                //  SplineSeriesView view = (SplineSeriesView)chartControl1.SeriesTemplate.View;
-                // view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-
+              //  chartControl1.SeriesTemplate.ChangeView(DevExpress.XtraCharts.ViewType.Spline);
+              //  SplineSeriesView view = (SplineSeriesView)chartControl1.SeriesTemplate.View;
+               // view.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+                
             }
             catch (Exception ex) { }
 
@@ -217,8 +179,8 @@ namespace FORM
                 DataTable dtShr = dt.Tables[2];
                 if (dtShr != null)
                 {
-                    lblShortToday.Text = string.IsNullOrEmpty(dtShr.Rows[0][1].ToString()) ? "0 Prs" : dtShr.Rows[0][1].ToString();
-                    lblShortYesterday.Text = string.IsNullOrEmpty(dtShr.Rows[1][1].ToString()) ? "0 Prs" : dtShr.Rows[1][1].ToString();
+                    lblShortToday.Text = dtShr.Rows[0][1].ToString();
+                    lblShortYesterday.Text = dtShr.Rows[1][1].ToString();
                 }
 
                 if (dt.Tables[1].Select("YT = 'TODAY'").Count() > 0)
@@ -253,28 +215,15 @@ namespace FORM
         {
             try
             {
-                lblTotalTodaySet.Text = "0 Prs"; lblTotalTodayDeli.Text = "0 Prs";
-                lblTotalTodaySet.Text = string.Format("{0:n0}", dt.Tables[3].Rows[0]["TOT_SET"]) + " Prs";
-                lblTotalTodayDeli.Text = string.Format("{0:n0}", dt.Tables[3].Rows[0]["TOT_UP"]) + " Prs";
+                lblTotalTodaySet.Text = "0 Prs";
+                lblTotalTodaySet.Text = string.Format("{0:n0}", dt.Tables[3].Rows[0]["TOT_BAL"]) + " Prs";
                 chartControl2.DataSource = dt.Tables[3];
                 chartControl2.Series[0].ArgumentDataMember = "TRIP";
                 chartControl2.Series[0].ValueDataMembers.AddRange(new string[] { "RATIO_TOT_BAL" });
-                chartControl2.Series[1].ArgumentDataMember = "TRIP";
-                chartControl2.Series[1].ValueDataMembers.AddRange(new string[] { "RATIO_TOT_UP" });
+
                 chartControl3.DataSource = dt.Tables[3];
                 chartControl3.Series[0].ArgumentDataMember = "TRIP";
-                chartControl3.Series[0].ValueDataMembers.AddRange(new string[] { "UP" });
-                chartControl3.Series[1].ArgumentDataMember = "TRIP";
-                chartControl3.Series[1].ValueDataMembers.AddRange(new string[] { "SET" });
-                chartControl3.Series[2].ArgumentDataMember = "TRIP";
-                chartControl3.Series[2].ValueDataMembers.AddRange(new string[] { "RATE_UP_SET" });
-
-                //chartControl3.SeriesDataMember = "CMP_CD";
-                //chartControl3.SeriesTemplate.ArgumentDataMember = "TRIP";
-                //chartControl3.SeriesTemplate.ValueDataMembers.AddRange(new string[] { "QTY" });
-                //chartControl3.SeriesTemplate.Label.TextPattern = "{V:#,#}";
-                //chartControl1.SeriesTemplate.ChangeView(DevExpress.XtraCharts.ViewType.Spline);
-                //chartControl1.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+                chartControl3.Series[0].ValueDataMembers.AddRange(new string[] { "QTY" });
             }
             catch (Exception) { }
         }
@@ -365,7 +314,7 @@ namespace FORM
                 splashScreenManager2.ShowWaitForm();
                 //BindingChart();
                 DataSet ds = Sel_Data_Chart("MES.SP_TMS_DASHBOARD_Q3", _LINE, _MLINE, _DATE);
-                BindingChart1(ds, 3);
+                BindingChart1(ds, true);
                 BindingChart2(ds, true);
                 BindingChart5(ds);
                 cCount = 0;
@@ -400,16 +349,16 @@ namespace FORM
 
         private void btnYesterday_Click(object sender, EventArgs e)
         {
-
+           
             isToday = false;
             lblToday_Label.BackColor = Color.Transparent;
-            btnYesterday.Appearance.BackColor = Color.Orange;
-            btnYesterday.Appearance.BackColor2 = Color.Orange;
-            btnToday.Appearance.BackColor = Color.LightSteelBlue;
-            btnToday.Appearance.BackColor2 = Color.LightSteelBlue;
+            btnYesterday.Appearance.BackColor = Color.Blue;
+            btnYesterday.Appearance.BackColor2 = Color.Blue;
+            btnToday.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
+            btnToday.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Cursor = Cursors.WaitCursor;
             splashScreenManager2.ShowWaitForm();
-            BindingChart1(dsToday, 2);
+            BindingChart1(dsToday, false);
             cCount = 0;
             splashScreenManager2.CloseWaitForm();
             this.Cursor = Cursors.Default;
@@ -419,13 +368,13 @@ namespace FORM
         {
             isToday = true;
             lblYesterday_Label.BackColor = Color.Transparent;
-            btnToday.Appearance.BackColor = Color.Orange;
-            btnToday.Appearance.BackColor2 = Color.Orange;
-            btnYesterday.Appearance.BackColor = Color.LightSteelBlue;
-            btnYesterday.Appearance.BackColor2 = Color.LightSteelBlue;
+            btnToday.Appearance.BackColor = Color.Blue;
+            btnToday.Appearance.BackColor2 = Color.Blue;
+            btnYesterday.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
+            btnYesterday.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Cursor = Cursors.WaitCursor;
             splashScreenManager2.ShowWaitForm();
-            BindingChart1(dsToday, 1);
+            BindingChart1(dsToday, true);
             cCount = 0;
             splashScreenManager2.CloseWaitForm();
             this.Cursor = Cursors.Default;
@@ -438,15 +387,15 @@ namespace FORM
                 try
                 {
                     isToday = true;
-                    btnToday.Appearance.BackColor = Color.Orange;
-                    btnToday.Appearance.BackColor2 = Color.Orange;
-                    //ComVar.Var._strValue1 = "VJ1";
+                    btnToday.Appearance.BackColor = Color.Blue;
+                    btnToday.Appearance.BackColor2 = Color.Blue;
+                  //  ComVar.Var._strValue1 = "VJ1";
                     _LINE = string.IsNullOrEmpty(ComVar.Var._strValue1) ? "099" : ComVar.Var._strValue1;
                     _MLINE = string.IsNullOrEmpty(ComVar.Var._strValue2) ? "000" : ComVar.Var._strValue2;
                     if (_LINE.Equals("VJ1"))
                         lblLine.Text = "VINH CUU";
                     else if (_LINE.Equals("FTY01"))
-                        lblLine.Text = "FACTORY 1";
+                         lblLine.Text = "FACTORY 1";
                     else
                     {
                         if (Convert.ToInt32(_LINE) < 6)
@@ -459,7 +408,7 @@ namespace FORM
                     cCount = 60;
                     tmrLoad.Start();
                 }
-                catch { }
+                catch{ }
             }
             else
                 tmrLoad.Stop();
@@ -492,7 +441,7 @@ namespace FORM
                 if (lblYesterday_Label.BackColor == Color.Yellow)
                     lblYesterday_Label.BackColor = Color.Transparent;
                 else
-                    lblYesterday_Label.BackColor = Color.Yellow;
+                    lblYesterday_Label.BackColor = Color.Yellow; 
             }
 
         }
@@ -521,11 +470,11 @@ namespace FORM
 
         private void lblLine_DoubleClick(object sender, EventArgs e)
         {
-            // FRM_LINE FRM_LINE = new FRM_LINE();
-            // FRM_LINE.OnMenuSelect += MenuSel;
-            // FRM_LINE.ShowDialog();
+           // FRM_LINE FRM_LINE = new FRM_LINE();
+           // FRM_LINE.OnMenuSelect += MenuSel;
+           // FRM_LINE.ShowDialog();
         }
 
-
+        
     }
 }

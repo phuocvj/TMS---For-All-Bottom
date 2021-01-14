@@ -28,57 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieFanAnimation pieFanAnimation1 = new DevExpress.XtraCharts.PieFanAnimation();
+            DevExpress.XtraCharts.QuarticEasingFunction quarticEasingFunction1 = new DevExpress.XtraCharts.QuarticEasingFunction();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel1 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
             DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView1 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
             DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation1 = new DevExpress.XtraCharts.PieSpinAnimation();
-            DevExpress.XtraCharts.QuarticEasingFunction quarticEasingFunction1 = new DevExpress.XtraCharts.QuarticEasingFunction();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel2 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
             DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView2 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
             DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation2 = new DevExpress.XtraCharts.PieSpinAnimation();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel3 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
-            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView3 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
-            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation3 = new DevExpress.XtraCharts.PieSpinAnimation();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel4 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
-            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView4 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
-            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation4 = new DevExpress.XtraCharts.PieSpinAnimation();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
             DevExpress.XtraCharts.SplineAreaSeriesView splineAreaSeriesView1 = new DevExpress.XtraCharts.SplineAreaSeriesView();
-            DevExpress.XtraCharts.XYSeriesStretchAnimation xySeriesStretchAnimation1 = new DevExpress.XtraCharts.XYSeriesStretchAnimation();
+            DevExpress.XtraCharts.XYSeriesUnwrapAnimation xySeriesUnwrapAnimation1 = new DevExpress.XtraCharts.XYSeriesUnwrapAnimation();
             DevExpress.XtraCharts.QuinticEasingFunction quinticEasingFunction1 = new DevExpress.XtraCharts.QuinticEasingFunction();
             DevExpress.XtraCharts.XYMarkerSlideAnimation xyMarkerSlideAnimation1 = new DevExpress.XtraCharts.XYMarkerSlideAnimation();
             DevExpress.XtraCharts.SineEasingFunction sineEasingFunction1 = new DevExpress.XtraCharts.SineEasingFunction();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY1 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series9 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.BarWidenAnimation barWidenAnimation1 = new DevExpress.XtraCharts.BarWidenAnimation();
             DevExpress.XtraCharts.ElasticEasingFunction elasticEasingFunction1 = new DevExpress.XtraCharts.ElasticEasingFunction();
             DevExpress.XtraCharts.HatchFillOptions hatchFillOptions1 = new DevExpress.XtraCharts.HatchFillOptions();
-            DevExpress.XtraCharts.Series series10 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel2 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView1 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.XYMarkerSlideAnimation xyMarkerSlideAnimation2 = new DevExpress.XtraCharts.XYMarkerSlideAnimation();
-            DevExpress.XtraCharts.Series series11 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel5 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
-            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView5 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
-            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation5 = new DevExpress.XtraCharts.PieSpinAnimation();
-            DevExpress.XtraCharts.Series series12 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel6 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
-            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView6 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
-            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation6 = new DevExpress.XtraCharts.PieSpinAnimation();
+            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel3 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
+            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView3 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
+            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation3 = new DevExpress.XtraCharts.PieSpinAnimation();
+            DevExpress.XtraCharts.Series series9 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.NestedDoughnutSeriesLabel nestedDoughnutSeriesLabel4 = new DevExpress.XtraCharts.NestedDoughnutSeriesLabel();
+            DevExpress.XtraCharts.NestedDoughnutSeriesView nestedDoughnutSeriesView4 = new DevExpress.XtraCharts.NestedDoughnutSeriesView();
+            DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation4 = new DevExpress.XtraCharts.PieSpinAnimation();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
@@ -87,7 +76,7 @@
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.btnYesterday = new DevExpress.XtraEditors.SimpleButton();
             this.btnToday = new DevExpress.XtraEditors.SimpleButton();
-            this.tmrLoad = new System.Windows.Forms.Timer();
+            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
@@ -101,15 +90,16 @@
             this.separatorControl5 = new DevExpress.XtraEditors.SeparatorControl();
             this.label8 = new System.Windows.Forms.Label();
             this.lblShortToday = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
-            this.tmrNumber = new System.Windows.Forms.Timer();
+            this.tmrNumber = new System.Windows.Forms.Timer(this.components);
             this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl5 = new DevExpress.XtraCharts.ChartControl();
             this.label3 = new System.Windows.Forms.Label();
             this.separatorControl7 = new DevExpress.XtraEditors.SeparatorControl();
             this.lblTotalTodaySet = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.separatorControl8 = new DevExpress.XtraEditors.SeparatorControl();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTimeTrip1 = new System.Windows.Forms.Label();
@@ -125,62 +115,48 @@
             this.separatorControl12 = new DevExpress.XtraEditors.SeparatorControl();
             this.label14 = new System.Windows.Forms.Label();
             this.lblTimeTrip5 = new System.Windows.Forms.Label();
-            this.tmrBlinking = new System.Windows.Forms.Timer();
+            this.tmrBlinking = new System.Windows.Forms.Timer(this.components);
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.separatorControl13 = new DevExpress.XtraEditors.SeparatorControl();
             this.lblLine = new System.Windows.Forms.Label();
-            this.separatorControl14 = new DevExpress.XtraEditors.SeparatorControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalTodayDeli = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl9)).BeginInit();
@@ -189,8 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -235,33 +209,23 @@
             this.chartControl2.DataBindings = null;
             this.chartControl2.Legend.Name = "Default Legend";
             this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl2.Location = new System.Drawing.Point(75, 609);
+            this.chartControl2.Location = new System.Drawing.Point(74, 600);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.PaletteName = "Pastel Kit";
-            nestedDoughnutSeriesLabel1.Font = new System.Drawing.Font("Calibri", 13F);
-            nestedDoughnutSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.TwoColumns;
-            nestedDoughnutSeriesLabel1.TextPattern = "{A} SET: {V}%";
-            series1.Label = nestedDoughnutSeriesLabel1;
-            series1.Name = "Ratio Set.";
-            pieSpinAnimation1.Duration = System.TimeSpan.Parse("00:00:01");
+            pieSeriesLabel1.Font = new System.Drawing.Font("Calibri", 13F);
+            pieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.TwoColumns;
+            pieSeriesLabel1.TextPattern = "{A} RATIO: {V}%";
+            series1.Label = pieSeriesLabel1;
+            series1.Name = "Series 1";
+            pieFanAnimation1.Duration = System.TimeSpan.Parse("00:00:01");
             quarticEasingFunction1.EasingMode = DevExpress.XtraCharts.EasingMode.InOut;
-            pieSpinAnimation1.EasingFunction = quarticEasingFunction1;
-            nestedDoughnutSeriesView1.Animation = pieSpinAnimation1;
-            nestedDoughnutSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
-            series1.View = nestedDoughnutSeriesView1;
-            nestedDoughnutSeriesLabel2.TextPattern = "{A} DELIVERY: {V}%";
-            series2.Label = nestedDoughnutSeriesLabel2;
-            series2.Name = "Ratio Delivery";
-            pieSpinAnimation2.Direction = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
-            nestedDoughnutSeriesView2.Animation = pieSpinAnimation2;
-            nestedDoughnutSeriesView2.HeightToWidthRatio = 1.1D;
-            nestedDoughnutSeriesView2.HoleRadiusPercent = 41;
-            nestedDoughnutSeriesView2.Weight = 1.1D;
-            series2.View = nestedDoughnutSeriesView2;
+            pieFanAnimation1.EasingFunction = quarticEasingFunction1;
+            pieSeriesView1.Animation = pieFanAnimation1;
+            pieSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
+            series1.View = pieSeriesView1;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2};
-            this.chartControl2.Size = new System.Drawing.Size(731, 409);
+        series1};
+            this.chartControl2.Size = new System.Drawing.Size(731, 418);
             this.chartControl2.TabIndex = 3;
             // 
             // labelControl3
@@ -290,24 +254,24 @@
             this.chartControl4.Location = new System.Drawing.Point(888, 163);
             this.chartControl4.Name = "chartControl4";
             this.chartControl4.PaletteName = "Mixed";
-            nestedDoughnutSeriesLabel3.Font = new System.Drawing.Font("Calibri", 9F);
-            nestedDoughnutSeriesLabel3.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Outside;
-            nestedDoughnutSeriesLabel3.TextPattern = "{A} ({V:#,#})";
-            series3.Label = nestedDoughnutSeriesLabel3;
-            series3.Name = "Series 1";
-            pieSpinAnimation3.Direction = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
-            nestedDoughnutSeriesView3.Animation = pieSpinAnimation3;
-            nestedDoughnutSeriesView3.HoleRadiusPercent = 60;
-            nestedDoughnutSeriesView3.MinAllowedSizePercentage = 80D;
-            series3.View = nestedDoughnutSeriesView3;
-            nestedDoughnutSeriesLabel4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.Label = nestedDoughnutSeriesLabel4;
-            series4.Name = "Series 2";
-            nestedDoughnutSeriesView4.Animation = pieSpinAnimation4;
-            series4.View = nestedDoughnutSeriesView4;
+            nestedDoughnutSeriesLabel1.Font = new System.Drawing.Font("Calibri", 9F);
+            nestedDoughnutSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Outside;
+            nestedDoughnutSeriesLabel1.TextPattern = "{A} ({V:#,#})";
+            series2.Label = nestedDoughnutSeriesLabel1;
+            series2.Name = "Series 1";
+            pieSpinAnimation1.Direction = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
+            nestedDoughnutSeriesView1.Animation = pieSpinAnimation1;
+            nestedDoughnutSeriesView1.HoleRadiusPercent = 60;
+            nestedDoughnutSeriesView1.MinAllowedSizePercentage = 80D;
+            series2.View = nestedDoughnutSeriesView1;
+            nestedDoughnutSeriesLabel2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Label = nestedDoughnutSeriesLabel2;
+            series3.Name = "Series 2";
+            nestedDoughnutSeriesView2.Animation = pieSpinAnimation2;
+            series3.View = nestedDoughnutSeriesView2;
             this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3,
-        series4};
+        series2,
+        series3};
             this.chartControl4.Size = new System.Drawing.Size(456, 331);
             this.chartControl4.TabIndex = 6;
             // 
@@ -321,11 +285,6 @@
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
             xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisX.VisualRange.Auto = false;
-            xyDiagram1.AxisX.VisualRange.AutoSideMargins = false;
-            xyDiagram1.AxisX.VisualRange.MaxValueSerializable = "9";
-            xyDiagram1.AxisX.VisualRange.MinValueSerializable = "0";
-            xyDiagram1.AxisX.VisualRange.SideMarginsValue = 0D;
             xyDiagram1.AxisX.WholeRange.AutoSideMargins = false;
             xyDiagram1.AxisX.WholeRange.SideMarginsValue = 0D;
             xyDiagram1.AxisY.Label.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,31 +302,30 @@
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl1.Location = new System.Drawing.Point(74, 166);
             this.chartControl1.Name = "chartControl1";
-            this.chartControl1.PaletteName = "Equity";
             pointSeriesLabel1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pointSeriesLabel1.TextPattern = "{V:#,#}";
-            series5.Label = pointSeriesLabel1;
-            series5.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series5.Name = "UPPER";
+            series4.Label = pointSeriesLabel1;
+            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series4.Name = "UPPER";
             splineAreaSeriesView1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            splineAreaSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             splineAreaSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            xySeriesUnwrapAnimation1.Direction = DevExpress.XtraCharts.XYSeriesAnimationUnwrapDirection.Vertical;
             quinticEasingFunction1.EasingMode = DevExpress.XtraCharts.EasingMode.InOut;
-            xySeriesStretchAnimation1.EasingFunction = quinticEasingFunction1;
-            splineAreaSeriesView1.SeriesAnimation = xySeriesStretchAnimation1;
-            xyMarkerSlideAnimation1.Direction = DevExpress.XtraCharts.XYMarkerSlideAnimationDirection.FromBottomCenter;
+            xySeriesUnwrapAnimation1.EasingFunction = quinticEasingFunction1;
+            splineAreaSeriesView1.SeriesAnimation = xySeriesUnwrapAnimation1;
+            xyMarkerSlideAnimation1.Direction = DevExpress.XtraCharts.XYMarkerSlideAnimationDirection.FromTopCenter;
             xyMarkerSlideAnimation1.EasingFunction = sineEasingFunction1;
             splineAreaSeriesView1.SeriesPointAnimation = xyMarkerSlideAnimation1;
             splineAreaSeriesView1.Transparency = ((byte)(180));
-            series5.View = splineAreaSeriesView1;
-            series6.Name = "Series 2";
+            series4.View = splineAreaSeriesView1;
+            series5.Name = "Series 2";
+            series5.Visible = false;
+            series6.Name = "Series 3";
             series6.Visible = false;
-            series7.Name = "Series 3";
-            series7.Visible = false;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series4,
         series5,
-        series6,
-        series7};
+        series6};
             this.chartControl1.SeriesTemplate.LegendName = "Default Legend";
             sideBySideBarSeriesView1.AggregateFunction = DevExpress.XtraCharts.SeriesAggregateFunction.Average;
             this.chartControl1.SeriesTemplate.View = sideBySideBarSeriesView1;
@@ -377,8 +335,8 @@
             // 
             // btnYesterday
             // 
-            this.btnYesterday.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnYesterday.Appearance.BackColor2 = System.Drawing.Color.LightSteelBlue;
+            this.btnYesterday.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnYesterday.Appearance.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnYesterday.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnYesterday.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYesterday.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -392,14 +350,12 @@
             this.btnYesterday.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnYesterday.AppearanceHovered.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnYesterday.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnYesterday.AppearanceHovered.ForeColor = System.Drawing.Color.Black;
             this.btnYesterday.AppearanceHovered.Options.UseBackColor = true;
             this.btnYesterday.AppearanceHovered.Options.UseFont = true;
-            this.btnYesterday.AppearanceHovered.Options.UseForeColor = true;
-            this.btnYesterday.AppearancePressed.BackColor = System.Drawing.Color.Orange;
-            this.btnYesterday.AppearancePressed.BackColor2 = System.Drawing.Color.Orange;
+            this.btnYesterday.AppearancePressed.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnYesterday.AppearancePressed.BackColor2 = System.Drawing.SystemColors.GrayText;
             this.btnYesterday.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnYesterday.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.btnYesterday.AppearancePressed.ForeColor = System.Drawing.Color.Aqua;
             this.btnYesterday.AppearancePressed.Options.UseBackColor = true;
             this.btnYesterday.AppearancePressed.Options.UseFont = true;
             this.btnYesterday.AppearancePressed.Options.UseForeColor = true;
@@ -413,8 +369,8 @@
             // 
             // btnToday
             // 
-            this.btnToday.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnToday.Appearance.BackColor2 = System.Drawing.Color.LightSteelBlue;
+            this.btnToday.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnToday.Appearance.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnToday.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnToday.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnToday.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -428,14 +384,12 @@
             this.btnToday.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnToday.AppearanceHovered.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnToday.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnToday.AppearanceHovered.ForeColor = System.Drawing.Color.Black;
             this.btnToday.AppearanceHovered.Options.UseBackColor = true;
             this.btnToday.AppearanceHovered.Options.UseFont = true;
-            this.btnToday.AppearanceHovered.Options.UseForeColor = true;
-            this.btnToday.AppearancePressed.BackColor = System.Drawing.Color.Orange;
-            this.btnToday.AppearancePressed.BackColor2 = System.Drawing.Color.Orange;
+            this.btnToday.AppearancePressed.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnToday.AppearancePressed.BackColor2 = System.Drawing.SystemColors.GrayText;
             this.btnToday.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnToday.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.btnToday.AppearancePressed.ForeColor = System.Drawing.Color.Aqua;
             this.btnToday.AppearancePressed.Options.UseBackColor = true;
             this.btnToday.AppearancePressed.Options.UseFont = true;
             this.btnToday.AppearancePressed.Options.UseForeColor = true;
@@ -583,6 +537,33 @@
             this.lblShortToday.Text = "No Shortage.";
             this.lblShortToday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FORM.Properties.Resources.CS;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 1024);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(424, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::FORM.Properties.Resources.back;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(2, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(70, 67);
+            this.btnBack.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnBack, "Back to HOME");
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // separatorControl6
             // 
             this.separatorControl6.Location = new System.Drawing.Point(442, 1024);
@@ -611,67 +592,34 @@
             xyDiagram2.DefaultPane.BackColor = System.Drawing.Color.White;
             xyDiagram2.DefaultPane.BorderVisible = false;
             xyDiagram2.Rotated = true;
-            secondaryAxisY1.AxisID = 0;
-            secondaryAxisY1.Name = "Secondary AxisY 1";
-            secondaryAxisY1.VisibleInPanesSerializable = "-1";
-            xyDiagram2.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
-            secondaryAxisY1});
             this.chartControl3.Diagram = xyDiagram2;
-            this.chartControl3.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
-            this.chartControl3.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
-            this.chartControl3.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             this.chartControl3.Legend.Name = "Default Legend";
-            this.chartControl3.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            this.chartControl3.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl3.Location = new System.Drawing.Point(812, 601);
             this.chartControl3.Name = "chartControl3";
-            sideBySideBarSeriesLabel1.BackColor = System.Drawing.Color.Black;
-            sideBySideBarSeriesLabel1.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            sideBySideBarSeriesLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            sideBySideBarSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            sideBySideBarSeriesLabel1.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sideBySideBarSeriesLabel1.LineStyle.Thickness = 2;
             sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
+            sideBySideBarSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
+            sideBySideBarSeriesLabel1.ShowForZeroValues = true;
             sideBySideBarSeriesLabel1.TextColor = System.Drawing.Color.White;
             sideBySideBarSeriesLabel1.TextPattern = "{V:#,#} Prs";
-            series8.Label = sideBySideBarSeriesLabel1;
-            series8.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series8.LegendTextPattern = "{S}";
-            series8.Name = "Delivery";
-            sideBySideBarSeriesView2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series8.View = sideBySideBarSeriesView2;
-            sideBySideBarSeriesLabel2.BackColor = System.Drawing.Color.Black;
-            sideBySideBarSeriesLabel2.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            sideBySideBarSeriesLabel2.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sideBySideBarSeriesLabel2.LineStyle.Thickness = 2;
-            sideBySideBarSeriesLabel2.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
-            sideBySideBarSeriesLabel2.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
-            sideBySideBarSeriesLabel2.ShowForZeroValues = true;
-            sideBySideBarSeriesLabel2.TextColor = System.Drawing.Color.White;
-            sideBySideBarSeriesLabel2.TextPattern = "{V:#,#} Prs";
-            series9.Label = sideBySideBarSeriesLabel2;
-            series9.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series9.LegendTextPattern = "{S}";
-            series9.Name = "Set Balance";
+            series7.Label = sideBySideBarSeriesLabel1;
+            series7.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series7.Name = "Series 1";
             elasticEasingFunction1.EasingMode = DevExpress.XtraCharts.EasingMode.InOut;
             barWidenAnimation1.EasingFunction = elasticEasingFunction1;
-            sideBySideBarSeriesView3.Animation = barWidenAnimation1;
-            sideBySideBarSeriesView3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            sideBySideBarSeriesView3.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Hatch;
+            sideBySideBarSeriesView2.Animation = barWidenAnimation1;
+            sideBySideBarSeriesView2.ColorEach = true;
+            sideBySideBarSeriesView2.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Hatch;
             hatchFillOptions1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
             hatchFillOptions1.HatchStyle = System.Drawing.Drawing2D.HatchStyle.DarkUpwardDiagonal;
-            sideBySideBarSeriesView3.FillStyle.Options = hatchFillOptions1;
-            series9.View = sideBySideBarSeriesView3;
-            pointSeriesLabel2.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            pointSeriesLabel2.TextPattern = "{V}%";
-            series10.Label = pointSeriesLabel2;
-            series10.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series10.Name = "Rate";
-            splineSeriesView1.AxisYName = "Secondary AxisY 1";
-            splineSeriesView1.Color = System.Drawing.Color.Blue;
-            splineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            xyMarkerSlideAnimation2.Direction = DevExpress.XtraCharts.XYMarkerSlideAnimationDirection.FromLeftCenter;
-            splineSeriesView1.SeriesPointAnimation = xyMarkerSlideAnimation2;
-            series10.View = splineSeriesView1;
+            sideBySideBarSeriesView2.FillStyle.Options = hatchFillOptions1;
+            series7.View = sideBySideBarSeriesView2;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series8,
-        series9,
-        series10};
+        series7};
             this.chartControl3.Size = new System.Drawing.Size(1042, 417);
             this.chartControl3.TabIndex = 15;
             // 
@@ -685,24 +633,24 @@
             this.chartControl5.Location = new System.Drawing.Point(1402, 163);
             this.chartControl5.Name = "chartControl5";
             this.chartControl5.PaletteName = "Aspect";
-            nestedDoughnutSeriesLabel5.Font = new System.Drawing.Font("Calibri", 9F);
-            nestedDoughnutSeriesLabel5.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Outside;
-            nestedDoughnutSeriesLabel5.TextPattern = "{A} ({V:#,#})";
-            series11.Label = nestedDoughnutSeriesLabel5;
-            series11.Name = "Series 1";
-            nestedDoughnutSeriesView5.Animation = pieSpinAnimation5;
-            nestedDoughnutSeriesView5.HoleRadiusPercent = 60;
-            nestedDoughnutSeriesView5.MinAllowedSizePercentage = 80D;
-            series11.View = nestedDoughnutSeriesView5;
-            nestedDoughnutSeriesLabel6.Font = new System.Drawing.Font("Calibri", 9F);
-            series12.Label = nestedDoughnutSeriesLabel6;
-            series12.Name = "Series 2";
-            pieSpinAnimation6.Direction = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
-            nestedDoughnutSeriesView6.Animation = pieSpinAnimation6;
-            series12.View = nestedDoughnutSeriesView6;
+            nestedDoughnutSeriesLabel3.Font = new System.Drawing.Font("Calibri", 9F);
+            nestedDoughnutSeriesLabel3.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Outside;
+            nestedDoughnutSeriesLabel3.TextPattern = "{A} ({V:#,#})";
+            series8.Label = nestedDoughnutSeriesLabel3;
+            series8.Name = "Series 1";
+            nestedDoughnutSeriesView3.Animation = pieSpinAnimation3;
+            nestedDoughnutSeriesView3.HoleRadiusPercent = 60;
+            nestedDoughnutSeriesView3.MinAllowedSizePercentage = 80D;
+            series8.View = nestedDoughnutSeriesView3;
+            nestedDoughnutSeriesLabel4.Font = new System.Drawing.Font("Calibri", 9F);
+            series9.Label = nestedDoughnutSeriesLabel4;
+            series9.Name = "Series 2";
+            pieSpinAnimation4.Direction = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
+            nestedDoughnutSeriesView4.Animation = pieSpinAnimation4;
+            series9.View = nestedDoughnutSeriesView4;
             this.chartControl5.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series11,
-        series12};
+        series8,
+        series9};
             this.chartControl5.Size = new System.Drawing.Size(456, 331);
             this.chartControl5.TabIndex = 16;
             // 
@@ -711,7 +659,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(421, 547);
+            this.label3.Location = new System.Drawing.Point(134, 547);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 21);
             this.label3.TabIndex = 18;
@@ -721,7 +669,7 @@
             // 
             this.separatorControl7.LineColor = System.Drawing.Color.Silver;
             this.separatorControl7.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl7.Location = new System.Drawing.Point(373, 536);
+            this.separatorControl7.Location = new System.Drawing.Point(86, 536);
             this.separatorControl7.Name = "separatorControl7";
             this.separatorControl7.Size = new System.Drawing.Size(75, 69);
             this.separatorControl7.TabIndex = 17;
@@ -730,16 +678,12 @@
             // 
             this.lblTotalTodaySet.AutoSize = true;
             this.lblTotalTodaySet.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTodaySet.ForeColor = System.Drawing.Color.Green;
-            this.lblTotalTodaySet.Location = new System.Drawing.Point(432, 567);
+            this.lblTotalTodaySet.ForeColor = System.Drawing.Color.Tomato;
+            this.lblTotalTodaySet.Location = new System.Drawing.Point(145, 567);
             this.lblTotalTodaySet.Name = "lblTotalTodaySet";
             this.lblTotalTodaySet.Size = new System.Drawing.Size(81, 39);
             this.lblTotalTodaySet.TabIndex = 19;
             this.lblTotalTodaySet.Text = "0 Prs";
-            // 
-            // splashScreenManager2
-            // 
-            this.splashScreenManager2.ClosingDelay = 500;
             // 
             // separatorControl8
             // 
@@ -769,7 +713,7 @@
             this.lblTimeTrip1.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTimeTrip1.Location = new System.Drawing.Point(864, 568);
             this.lblTimeTrip1.Name = "lblTimeTrip1";
-            this.lblTimeTrip1.Size = new System.Drawing.Size(136, 27);
+            this.lblTimeTrip1.Size = new System.Drawing.Size(138, 27);
             this.lblTimeTrip1.TabIndex = 19;
             this.lblTimeTrip1.Text = "16:30➜08:15";
             // 
@@ -800,7 +744,7 @@
             this.lblTimeTrip2.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTimeTrip2.Location = new System.Drawing.Point(1022, 567);
             this.lblTimeTrip2.Name = "lblTimeTrip2";
-            this.lblTimeTrip2.Size = new System.Drawing.Size(142, 27);
+            this.lblTimeTrip2.Size = new System.Drawing.Size(144, 27);
             this.lblTimeTrip2.TabIndex = 19;
             this.lblTimeTrip2.Text = "08:16➜09:59";
             // 
@@ -831,7 +775,7 @@
             this.lblTimeTrip3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTimeTrip3.Location = new System.Drawing.Point(1183, 568);
             this.lblTimeTrip3.Name = "lblTimeTrip3";
-            this.lblTimeTrip3.Size = new System.Drawing.Size(136, 27);
+            this.lblTimeTrip3.Size = new System.Drawing.Size(138, 27);
             this.lblTimeTrip3.TabIndex = 19;
             this.lblTimeTrip3.Text = "10:00➜12:59";
             // 
@@ -862,7 +806,7 @@
             this.lblTimeTrip4.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTimeTrip4.Location = new System.Drawing.Point(1356, 567);
             this.lblTimeTrip4.Name = "lblTimeTrip4";
-            this.lblTimeTrip4.Size = new System.Drawing.Size(136, 27);
+            this.lblTimeTrip4.Size = new System.Drawing.Size(138, 27);
             this.lblTimeTrip4.TabIndex = 19;
             this.lblTimeTrip4.Text = "13:00➜14:59";
             // 
@@ -893,7 +837,7 @@
             this.lblTimeTrip5.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTimeTrip5.Location = new System.Drawing.Point(1522, 567);
             this.lblTimeTrip5.Name = "lblTimeTrip5";
-            this.lblTimeTrip5.Size = new System.Drawing.Size(136, 27);
+            this.lblTimeTrip5.Size = new System.Drawing.Size(138, 27);
             this.lblTimeTrip5.TabIndex = 19;
             this.lblTimeTrip5.Text = "15:00➜16:29";
             // 
@@ -940,64 +884,6 @@
             this.lblLine.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblLine.DoubleClick += new System.EventHandler(this.lblLine_DoubleClick);
             // 
-            // separatorControl14
-            // 
-            this.separatorControl14.LineColor = System.Drawing.Color.Silver;
-            this.separatorControl14.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl14.Location = new System.Drawing.Point(146, 536);
-            this.separatorControl14.Name = "separatorControl14";
-            this.separatorControl14.Size = new System.Drawing.Size(75, 69);
-            this.separatorControl14.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(194, 547);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 21);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Today Dilivery Total";
-            // 
-            // lblTotalTodayDeli
-            // 
-            this.lblTotalTodayDeli.AutoSize = true;
-            this.lblTotalTodayDeli.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTodayDeli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblTotalTodayDeli.Location = new System.Drawing.Point(205, 567);
-            this.lblTotalTodayDeli.Name = "lblTotalTodayDeli";
-            this.lblTotalTodayDeli.Size = new System.Drawing.Size(81, 39);
-            this.lblTotalTodayDeli.TabIndex = 19;
-            this.lblTotalTodayDeli.Text = "0 Prs";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FORM.Properties.Resources.CS;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 1024);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(424, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::FORM.Properties.Resources.back;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(2, 2);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 67);
-            this.btnBack.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnBack, "Back to HOME");
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // FRM_TMS_DASH
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1019,13 +905,10 @@
             this.Controls.Add(this.separatorControl11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.separatorControl10);
-            this.Controls.Add(this.lblTotalTodayDeli);
             this.Controls.Add(this.lblTotalTodaySet);
             this.Controls.Add(this.separatorControl9);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.separatorControl8);
-            this.Controls.Add(this.separatorControl14);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.separatorControl7);
             this.Controls.Add(this.chartControl5);
@@ -1059,26 +942,23 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FRM_TMS_DASH_Load);
             this.VisibleChanged += new System.EventHandler(this.FRM_TMS_DASH_VisibleChanged);
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -1086,25 +966,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(nestedDoughnutSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl8)).EndInit();
@@ -1114,8 +988,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,9 +1048,6 @@
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
         private DevExpress.XtraEditors.SeparatorControl separatorControl13;
         private System.Windows.Forms.Label lblLine;
-        private DevExpress.XtraEditors.SeparatorControl separatorControl14;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTotalTodayDeli;
 
     }
 }

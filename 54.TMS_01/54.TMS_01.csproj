@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{901440DA-FE76-4E68-989E-8AB0F49A6BDC}</ProjectGuid>
+    <ProjectGuid>{DB010E2E-D4FD-4B74-BB6F-BBF32F5C5536}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FORM</RootNamespace>
-    <AssemblyName>TMS_01</AssemblyName>
+    <AssemblyName>TMS_VC</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,7 +45,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MAIN\bin\Debug\COM.dll</HintPath>
     </Reference>
-    <Reference Include="ComVar, Version=1.0.6984.18247, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ComVar, Version=1.0.7545.21495, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MAIN\bin\Debug\ComVar.dll</HintPath>
     </Reference>
@@ -109,10 +109,9 @@
       <HintPath>..\MAIN\bin\Debug\Interop.FPSpreadADO.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Interop.FPUSpreadADO, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+    <Reference Include="Interop.FPUSpreadADO">
       <HintPath>..\MAIN\bin\Debug\Interop.FPUSpreadADO.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -163,11 +162,41 @@
     <Compile Include="ClassLib\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FRM_TMS_TRIP_LT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TMS_TRIP_LT.Designer.cs">
+      <DependentUpon>FRM_TMS_TRIP_LT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT_POP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT_POP.Designer.cs">
+      <DependentUpon>FRM_TMS_CAR_LT_POP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRM_TMS_CAR.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRM_TMS_CAR.designer.cs">
       <DependentUpon>FRM_TMS_CAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT.designer.cs">
+      <DependentUpon>FRM_TMS_CAR_LT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT_NEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TMS_CAR_LT_NEW.Designer.cs">
+      <DependentUpon>FRM_TMS_CAR_LT_NEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TMS_DASH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TMS_DASH.designer.cs">
+      <DependentUpon>FRM_TMS_DASH.cs</DependentUpon>
     </Compile>
     <Compile Include="init.cs" />
     <Compile Include="Location_grp.cs" />
@@ -203,8 +232,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FRM_TMS_TRIP_LT.resx">
+      <DependentUpon>FRM_TMS_TRIP_LT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TMS_CAR_LT_POP.resx">
+      <DependentUpon>FRM_TMS_CAR_LT_POP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRM_TMS_CAR.resx">
       <DependentUpon>FRM_TMS_CAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TMS_CAR_LT.resx">
+      <DependentUpon>FRM_TMS_CAR_LT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TMS_CAR_LT_NEW.resx">
+      <DependentUpon>FRM_TMS_CAR_LT_NEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TMS_DASH.resx">
+      <DependentUpon>FRM_TMS_DASH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -254,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

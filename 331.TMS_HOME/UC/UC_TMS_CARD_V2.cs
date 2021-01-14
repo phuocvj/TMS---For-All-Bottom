@@ -76,8 +76,10 @@ namespace FORM.UC
         private void btnEnter_Click(object sender, EventArgs e)
         {
             ComVar.Var._bValue2 = true;
+            ComVar.Var._IsBack = true;
             switch (_code)
             {
+                
                 case "F1":
                     ComVar.Var._strValue1 = "FTY01";
                     ComVar.Var.callForm = "179";
