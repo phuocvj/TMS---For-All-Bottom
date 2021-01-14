@@ -45,6 +45,15 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.splBottom = new System.Windows.Forms.SplitContainer();
+            this.tblCard = new System.Windows.Forms.TableLayoutPanel();
+            this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bgWorker = new System.ComponentModel.BackgroundWorker();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
+            this.tmrTitle = new System.Windows.Forms.Timer(this.components);
             this.advancedPanel4 = new FORM.AdvancedPanel();
             this.groupBoxEx4 = new FORM.GroupBoxEx();
             this.button4 = new System.Windows.Forms.Button();
@@ -65,15 +74,6 @@
             this.groupBoxEx1 = new FORM.GroupBoxEx();
             this.btnVJ2_VJ1 = new System.Windows.Forms.Button();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.splBottom = new System.Windows.Forms.SplitContainer();
-            this.tblCard = new System.Windows.Forms.TableLayoutPanel();
-            this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bgWorker = new System.ComponentModel.BackgroundWorker();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
-            this.tmrTitle = new System.Windows.Forms.Timer(this.components);
             this.tblMain.SuspendLayout();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
@@ -83,6 +83,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splBottom)).BeginInit();
+            this.splBottom.Panel1.SuspendLayout();
+            this.splBottom.Panel2.SuspendLayout();
+            this.splBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.advancedPanel4.SuspendLayout();
             this.groupBoxEx4.SuspendLayout();
             this.advancedPanel5.SuspendLayout();
@@ -93,12 +99,6 @@
             this.groupBoxEx2.SuspendLayout();
             this.advancedPanel1.SuspendLayout();
             this.groupBoxEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splBottom)).BeginInit();
-            this.splBottom.Panel1.SuspendLayout();
-            this.splBottom.Panel2.SuspendLayout();
-            this.splBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tblMain
@@ -339,6 +339,87 @@
             this.pictureBox6.Tag = "VINHCUU";
             this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
             this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
+            // 
+            // splBottom
+            // 
+            this.splBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splBottom.Location = new System.Drawing.Point(0, 0);
+            this.splBottom.Name = "splBottom";
+            this.splBottom.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splBottom.Panel1
+            // 
+            this.splBottom.Panel1.Controls.Add(this.tblCard);
+            // 
+            // splBottom.Panel2
+            // 
+            this.splBottom.Panel2.Controls.Add(this.separatorControl6);
+            this.splBottom.Panel2.Controls.Add(this.pictureBox5);
+            this.splBottom.Size = new System.Drawing.Size(1898, 814);
+            this.splBottom.SplitterDistance = 761;
+            this.splBottom.TabIndex = 0;
+            // 
+            // tblCard
+            // 
+            this.tblCard.ColumnCount = 10;
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblCard.Location = new System.Drawing.Point(0, 0);
+            this.tblCard.Name = "tblCard";
+            this.tblCard.RowCount = 1;
+            this.tblCard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblCard.Size = new System.Drawing.Size(1898, 761);
+            this.tblCard.TabIndex = 1;
+            // 
+            // separatorControl6
+            // 
+            this.separatorControl6.Location = new System.Drawing.Point(379, -9);
+            this.separatorControl6.Name = "separatorControl6";
+            this.separatorControl6.Size = new System.Drawing.Size(1504, 71);
+            this.separatorControl6.TabIndex = 71;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::FORM.Properties.Resources.Footer_CSI;
+            this.pictureBox5.Location = new System.Drawing.Point(16, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(357, 46);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 70;
+            this.pictureBox5.TabStop = false;
+            // 
+            // tmrLoad
+            // 
+            this.tmrLoad.Enabled = true;
+            this.tmrLoad.Interval = 1000;
+            this.tmrLoad.Tick += new System.EventHandler(this.tmrLoad_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // bgWorker
+            // 
+            this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorker_DoWork);
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
+            // tmrTitle
+            // 
+            this.tmrTitle.Enabled = true;
+            this.tmrTitle.Tick += new System.EventHandler(this.tmrTitle_Tick);
             // 
             // advancedPanel4
             // 
@@ -700,87 +781,6 @@
             this.labelControl7.Text = "VJ2 -> VJ1";
             this.labelControl7.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
-            // splBottom
-            // 
-            this.splBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splBottom.Location = new System.Drawing.Point(0, 0);
-            this.splBottom.Name = "splBottom";
-            this.splBottom.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splBottom.Panel1
-            // 
-            this.splBottom.Panel1.Controls.Add(this.tblCard);
-            // 
-            // splBottom.Panel2
-            // 
-            this.splBottom.Panel2.Controls.Add(this.separatorControl6);
-            this.splBottom.Panel2.Controls.Add(this.pictureBox5);
-            this.splBottom.Size = new System.Drawing.Size(1898, 814);
-            this.splBottom.SplitterDistance = 761;
-            this.splBottom.TabIndex = 0;
-            // 
-            // tblCard
-            // 
-            this.tblCard.ColumnCount = 10;
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCard.Location = new System.Drawing.Point(0, 0);
-            this.tblCard.Name = "tblCard";
-            this.tblCard.RowCount = 1;
-            this.tblCard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblCard.Size = new System.Drawing.Size(1898, 761);
-            this.tblCard.TabIndex = 1;
-            // 
-            // separatorControl6
-            // 
-            this.separatorControl6.Location = new System.Drawing.Point(379, -9);
-            this.separatorControl6.Name = "separatorControl6";
-            this.separatorControl6.Size = new System.Drawing.Size(1504, 71);
-            this.separatorControl6.TabIndex = 71;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::FORM.Properties.Resources.Footer_CSI;
-            this.pictureBox5.Location = new System.Drawing.Point(16, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(357, 46);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 70;
-            this.pictureBox5.TabStop = false;
-            // 
-            // tmrLoad
-            // 
-            this.tmrLoad.Enabled = true;
-            this.tmrLoad.Interval = 1000;
-            this.tmrLoad.Tick += new System.EventHandler(this.tmrLoad_Tick);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // bgWorker
-            // 
-            this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorker_DoWork);
-            // 
-            // splashScreenManager1
-            // 
-            this.splashScreenManager1.ClosingDelay = 500;
-            // 
-            // tmrTitle
-            // 
-            this.tmrTitle.Enabled = true;
-            this.tmrTitle.Tick += new System.EventHandler(this.tmrTitle_Tick);
-            // 
             // FRM_TMS_HOME
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -791,6 +791,7 @@
             this.Name = "FRM_TMS_HOME";
             this.Text = "FRM_TMS_HOME";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FRM_TMS_HOME_Load);
             this.VisibleChanged += new System.EventHandler(this.FRM_TMS_HOME_VisibleChanged);
             this.tblMain.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
@@ -802,6 +803,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.splBottom.Panel1.ResumeLayout(false);
+            this.splBottom.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splBottom)).EndInit();
+            this.splBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.advancedPanel4.ResumeLayout(false);
             this.groupBoxEx4.ResumeLayout(false);
             this.advancedPanel5.ResumeLayout(false);
@@ -812,12 +819,6 @@
             this.groupBoxEx2.ResumeLayout(false);
             this.advancedPanel1.ResumeLayout(false);
             this.groupBoxEx1.ResumeLayout(false);
-            this.splBottom.Panel1.ResumeLayout(false);
-            this.splBottom.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splBottom)).EndInit();
-            this.splBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }

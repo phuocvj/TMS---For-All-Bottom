@@ -187,7 +187,7 @@ namespace FORM
             if (this.Visible)
             {
 
-                btnBack.Visible = ComVar.Var._IsBack;
+                
 
                 // Move left 40 pixels in 2 seconds.
                 cCount = 300;
@@ -298,6 +298,11 @@ namespace FORM
         private void btnBack_Click(object sender, EventArgs e)
         {
             ComVar.Var.callForm = "back";
+        }
+
+        private void FRM_TMS_HOME_Load(object sender, EventArgs e)
+        {
+            btnBack.Visible = ComVar.Var._IsBack;
         }
 
         private void pictureBox6_MouseLeave(object sender, EventArgs e)
