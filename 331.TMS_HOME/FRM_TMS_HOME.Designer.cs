@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_TMS_HOME));
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnTrackRPT = new System.Windows.Forms.Button();
             this.btnSQM = new System.Windows.Forms.Button();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -67,11 +69,11 @@
             this.tblCard = new System.Windows.Forms.TableLayoutPanel();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tmrLoad = new System.Windows.Forms.Timer();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
-            this.tmrTitle = new System.Windows.Forms.Timer();
+            this.tmrTitle = new System.Windows.Forms.Timer(this.components);
             this.tblMain.SuspendLayout();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
@@ -117,6 +119,7 @@
             // 
             // pnHeader
             // 
+            this.pnHeader.Controls.Add(this.btnBack);
             this.pnHeader.Controls.Add(this.btnTrackRPT);
             this.pnHeader.Controls.Add(this.btnSQM);
             this.pnHeader.Controls.Add(this.labelControl4);
@@ -127,6 +130,27 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(1898, 74);
             this.pnHeader.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::FORM.Properties.Resources.Back_Icon;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(1468, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(82, 73);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnTrackRPT
             // 
@@ -843,5 +867,6 @@
         private System.Windows.Forms.Button btnSQM;
         private System.Windows.Forms.Timer tmrTitle;
         private System.Windows.Forms.Button btnTrackRPT;
+        private System.Windows.Forms.Button btnBack;
     }
 }
