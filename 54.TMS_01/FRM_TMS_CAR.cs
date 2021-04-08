@@ -59,10 +59,9 @@ namespace FORM
         private void FRM_SMT_LEADTIME_Load(object sender, EventArgs e)
         {
             lblDate.Text = string.Format(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            tmr_Time.Enabled = true;
+
             initForm();
             _Loc_X = pic_Car.Location.X;
-            FinishedCarLocation();
 
         }
 
@@ -71,12 +70,12 @@ namespace FORM
             if (this.Visible)
             {
                 _Time_Reload = 20;
-               // tmr_Time.Enabled = true;
-              //  
+                tmr_Time.Enabled = true;
+                FinishedCarLocation();
             }
             else
             {
-               // tmr_Time.Enabled = false;
+                tmr_Time.Enabled = false;
                 // HidePic();
             }
         }
@@ -294,7 +293,7 @@ namespace FORM
 
         private void initForm()
         {
-           // GoFullscreen();
+            GoFullscreen();
             
 
             _dtnInit = getInitForm2(this.GetType().Assembly.GetName().Name, this.GetType().Name);
@@ -311,7 +310,7 @@ namespace FORM
             }
             else
             {
-                cmdBack.TabIndex = 342;
+                cmdBack.TabIndex = 15;
                 cmdBack.Visible = true;
             }
         }
@@ -535,7 +534,7 @@ namespace FORM
         {
             try
             {
-                DataTable dt = _dtData.Select("OUT_QTY IS NOT NULL", "TRIP, ORD1").CopyToDataTable();
+                DataTable dt = _dtData.Select("OUT_QTY IS NOT NULL", "TRIP, MATERIAL_NAME").CopyToDataTable();
                 axGrid.MaxRows = 1;
                 axGrid.MaxRows = 100;
                 int iRow = 2;
@@ -549,16 +548,10 @@ namespace FORM
                     axGrid.SetText((int)gridColum.Mat, iRow, dt.Rows[i]["MATERIAL_NAME"].ToString());
                     axGrid.SetText((int)gridColum.Qty, iRow, dt.Rows[i]["OUT_QTY"].ToString());
 
-                    if (dt.Rows[i]["LEAVE_LAMI"].ToString().ToUpper() == "TOTAL")
-                    {
-                        axGrid.AddCellSpan(2, iRow, 5, 1);
-                    }
-                    else
-                    {
-                        axGrid.Row = iRow;
-                        axGrid.Col = (int)gridColum.Status;
-                        axGrid.TypePictPicture = axGrid.LoadPicture(Application.StartupPath + "\\img" + "\\GreenStatus.jpg", FPUSpreadADO.PictureTypeConstants.PictureTypeJPEG);
-                    }
+                    axGrid.Row = iRow;
+                    axGrid.Col = (int)gridColum.Status;
+                    axGrid.TypePictPicture = axGrid.LoadPicture(Application.StartupPath + "\\img" + "\\GreenStatus.jpg", FPUSpreadADO.PictureTypeConstants.PictureTypeJPEG);
+
                     iRow++;
                     //if (!_dtnTrip.ContainsKey(dt.Rows[i]["TRIP"].ToString()))
                     //{
@@ -608,6 +601,11 @@ namespace FORM
         }
 
         #endregion runTextModel
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
 
     
 

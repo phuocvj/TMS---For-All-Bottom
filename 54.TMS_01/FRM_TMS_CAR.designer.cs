@@ -136,7 +136,7 @@
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.Location = new System.Drawing.Point(0, 0);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(1920, 110);
+            this.pnHeader.Size = new System.Drawing.Size(1904, 110);
             this.pnHeader.TabIndex = 12;
             // 
             // btnDay
@@ -220,7 +220,7 @@
             this.cmdBack.Location = new System.Drawing.Point(1182, 1);
             this.cmdBack.Name = "cmdBack";
             this.cmdBack.Size = new System.Drawing.Size(108, 101);
-            this.cmdBack.TabIndex = 342;
+            this.cmdBack.TabIndex = 50;
             this.cmdBack.UseVisualStyleBackColor = false;
             this.cmdBack.Click += new System.EventHandler(this.callForm_Click);
             // 
@@ -234,7 +234,7 @@
             this.lblDate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblDate.Location = new System.Drawing.Point(1660, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(269, 106);
+            this.lblDate.Size = new System.Drawing.Size(253, 106);
             this.lblDate.TabIndex = 49;
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDate.DoubleClick += new System.EventHandler(this.lblDate_DoubleClick);
@@ -254,6 +254,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1901, 107);
             this.lblTitle.TabIndex = 2;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             this.lblTitle.DoubleClick += new System.EventHandler(this.lblTitle_DoubleClick);
             // 
             // lblZ1LT_Day
@@ -966,7 +967,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1904, 1092);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -986,6 +987,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_TMS_CAR";
             this.Text = "FRM_SMT_LEADTIME";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FRM_SMT_LEADTIME_Load);
             this.VisibleChanged += new System.EventHandler(this.FRM_SMT_LEADTIME_VisibleChanged);
             this.pnHeader.ResumeLayout(false);

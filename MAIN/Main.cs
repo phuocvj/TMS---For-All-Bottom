@@ -268,8 +268,9 @@ namespace MAIN
                 }
 
                 //Show form call and then hide form current
-               // ctr.Hide();
-               //AnimateWindow(ctr.Handle, 500, AW_SLIDE | 0x8);
+                // ctr.Hide();
+                //AnimateWindow(ctr.Handle, 500, AW_SLIDE | 0x8);
+                if (ctr == null) return;
                 ctr.Show();
                
                 pnMain.Controls.Find(ComVar.Var._Frm_Curr.ToUpper(), false).FirstOrDefault().Hide();
@@ -471,6 +472,7 @@ namespace MAIN
         {
             try
             {
+                if (_splashForm == null) return;
                 // Need to call on the thread that launched this splash       
                 if (_splashForm.InvokeRequired)
                     _splashForm.Invoke(new MethodInvoker(CloseSplash));

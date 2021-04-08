@@ -1,6 +1,6 @@
 ﻿namespace FORM
 {
-    partial class FRM_TMS_CAR_LT_POP
+    partial class FRM_TMS_TRIP_LT
     {
         /// <summary>
         /// Required designer variable.
@@ -313,8 +313,8 @@
             // splMain.Panel2
             // 
             this.splMain.Panel2.Controls.Add(this.grdBase);
-            this.splMain.Size = new System.Drawing.Size(1101, 554);
-            this.splMain.SplitterDistance = 69;
+            this.splMain.Size = new System.Drawing.Size(1717, 669);
+            this.splMain.SplitterDistance = 82;
             this.splMain.TabIndex = 3;
             // 
             // btnClose
@@ -326,7 +326,7 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1021, 3);
+            this.btnClose.Location = new System.Drawing.Point(1637, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(68, 63);
             this.btnClose.TabIndex = 2;
@@ -342,7 +342,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1015, 47);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "COMPONENT NOT YET INCOMING";
+            this.lblTitle.Text = "LONG THANH OUTGOING CHECK LIST";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // grdBase
@@ -354,7 +354,7 @@
             this.grdBase.LookAndFeel.UseDefaultLookAndFeel = false;
             this.grdBase.MainView = this.gvwBase1;
             this.grdBase.Name = "grdBase";
-            this.grdBase.Size = new System.Drawing.Size(1101, 481);
+            this.grdBase.Size = new System.Drawing.Size(1717, 583);
             this.grdBase.TabIndex = 5;
             this.grdBase.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvwBase1,
@@ -481,13 +481,13 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // FRM_TMS_CAR_LT_POP
+            // FRM_TMS_TRIP_LT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1101, 554);
+            this.ClientSize = new System.Drawing.Size(1717, 669);
             this.Controls.Add(this.splMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FRM_TMS_CAR_LT_POP";
+            this.Name = "FRM_TMS_TRIP_LT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_TMS_CAR_LT_NEW";
             this.Load += new System.EventHandler(this.FRM_TMS_CAR_LT_NEW_Load);

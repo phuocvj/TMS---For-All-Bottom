@@ -11,7 +11,7 @@ using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace FORM
 {
-    public partial class FRM_TMS_CAR_LT_POP : Form
+    public partial class FRM_TMS_TRIP_LT : Form
     {
         int angle = 0;
         int rotSpeed = 1;
@@ -23,7 +23,7 @@ namespace FORM
         int count = 0;
       
         string MLINE = ComVar.Var._strValue2;
-        public FRM_TMS_CAR_LT_POP()
+        public FRM_TMS_TRIP_LT()
         {
             InitializeComponent();
         }
@@ -52,65 +52,74 @@ namespace FORM
         {
             try
             {
+               
                 splashScreenManager1.ShowWaitForm();
                 Cursor = Cursors.WaitCursor;
                 DataTable data = null;
                 data = Select_Ora_Grid().Tables[0];
                 CreateSizeGrid(grdBase, gvwBase1, data);
                 grdBase.DataSource = data;
-                gvwBase1.Columns[0].OwnerBand.Width = 280;
-                gvwBase1.Columns[1].OwnerBand.Width = 100;
+                gvwBase1.Columns[0].OwnerBand.Width = 80;
+                gvwBase1.Columns[1].OwnerBand.Width = 250;
+                gvwBase1.Columns[2].OwnerBand.Width = 150;
+                gvwBase1.Columns[3].OwnerBand.Width = 80;
+             
+            //    gvwBase1.Columns[1].OwnerBand.Width = 100;
 
-                gvwBase1.Columns[0].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(128, 128, 128);
-                gvwBase1.Columns[0].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(128, 128, 128);
-                gvwBase1.Columns[0].OwnerBand.AppearanceHeader.ForeColor = Color.White;
-                gvwBase1.Columns[1].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(128, 128, 128);
-                gvwBase1.Columns[1].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(128, 128, 128);
-                gvwBase1.Columns[1].OwnerBand.AppearanceHeader.ForeColor = Color.White;
 
-                
-               
-                for (int i = 0; i < gvwBase1.Columns.Count; i++)
-                {
-                    gvwBase1.Columns[i].OptionsColumn.AllowEdit = false;
-                    gvwBase1.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwBase1.Columns[i].AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-                    gvwBase1.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwBase1.Columns[i].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-                    gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-                    gvwBase1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-
-                 
-                    if (i > 0)
+                //for (int row = 0; row < gvwBase1.RowCount ; row++)
+                //{
+                    for (int i = 0; i < gvwBase1.Columns.Count; i++)
                     {
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(57, 190, 29);
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(57, 190, 29);
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.ForeColor = Color.White;
-
-
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(255, 127, 0);
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(255, 127, 0);
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.ForeColor = Color.White;
-
-
-                      //  gvwBase1.Columns[i].OwnerBand.
-
-
-                        gvwBase1.Columns[i].Width = (grdBase.Width - gvwBase1.Columns[0].OwnerBand.Width) / (gvwBase1.Columns.Count - 1);
+                        gvwBase1.Columns[i].OptionsColumn.AllowEdit = false;
+                        gvwBase1.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        gvwBase1.Columns[i].AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+                        gvwBase1.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        gvwBase1.Columns[i].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
                         gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                         gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-
-                        gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-                    }
-
-                    gvwBase1.Columns[0].OwnerBand.Width = 278;
-                   
+                        gvwBase1.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
 
 
+
+                        gvwBase1.Columns["LINE"].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                        gvwBase1.Columns["MODEL"].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                        gvwBase1.Columns["STYLE"].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                        //gvwBase1.Columns["LINE"].Fixed=DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                        //gvwBase1.Columns["MODEL"].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                 
+                        //gvwBase1.Columns["STYLE"].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                        //gvwBase1.Columns["QTY"].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                        
+                        if (i > 3)
+                        {
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(57, 190, 29);
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(57, 190, 29);
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.ForeColor = Color.White;
+
+
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor = Color.FromArgb(255, 127, 0);
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.BackColor2 = Color.FromArgb(255, 127, 0);
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.ForeColor = Color.White;
+
+
+                            //  gvwBase1.Columns[i].OwnerBand.
+
+
+                            gvwBase1.Columns[i].Width = (grdBase.Width - gvwBase1.Columns[0].OwnerBand.Width - gvwBase1.Columns[1].OwnerBand.Width) / (gvwBase1.Columns.Count - 2);
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+
+                            gvwBase1.Columns[i].OwnerBand.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+                        }
                 }
-                Cursor = Cursors.Default;
-                splashScreenManager1.CloseWaitForm();
+
+                    Cursor = Cursors.Default;
+                    splashScreenManager1.CloseWaitForm();
+
+
+              //  }
+                    
               //  gvwBase1.OptionsView.AllowCellMerge = true;
             }
             catch
@@ -185,17 +194,19 @@ namespace FORM
                // e.Appearance.BackColor = Color.FromArgb(185, 217, 249);
                 e.Appearance.BackColor = Color.FromArgb(219, 251, 255);
             }
-            //if (gvwBase.GetRowCellValue(e.RowHandle, "SIZE") != null)
-            //{
-                if (e.RowHandle > 0 && e.Column.ColumnHandle > 0 )
+           
+                if (gvwBase1.GetRowCellValue(e.RowHandle, "LINE").ToString().ToUpper() == "TOTAL")
                 {
-                    if (e.CellValue.ToString() != gvwBase1.GetRowCellValue(0, e.Column).ToString())
-                    {
-                       
-                        e.Appearance.ForeColor = Color.Red; 
-                    }
+                    e.Appearance.BackColor = Color.LightSkyBlue;
+                    e.Appearance.ForeColor = Color.Black;
                 }
-           // }
+                if (e.RowHandle == gvwBase1.RowCount - 1)
+                {
+                    e.Appearance.BackColor = Color.Lime;
+                    e.Appearance.ForeColor = Color.Black;
+                }
+            
+          
         }
 
         private void bgw_ER_Check_DoWork(object sender, DoWorkEventArgs e)
@@ -274,12 +285,9 @@ namespace FORM
 
         }
         public string v_Trip;
-        public string v_STYLE_CD;
         public string v_CMP_CD_IN;
         public string v_date;
         public string LINE;
-        public string v_LINE_CD;
-        public string v_MLINE_CD;
         public string v_p_location;
 
 
@@ -290,37 +298,34 @@ namespace FORM
                 COM.OraDB MyOraDB = new COM.OraDB();
                 System.Data.DataSet ds_ret;
 
-                string process_name = "MES.SP_TMS_LT_POP_SHORT";
+                string process_name = "MES.SP_TMS_TRIP_LT";
                 //ARGMODE
-                MyOraDB.ReDim_Parameter(7);
+                MyOraDB.ReDim_Parameter(5);
                 MyOraDB.Process_Name = process_name;
                 MyOraDB.Parameter_Name[0] = "V_P_LINE";
-                MyOraDB.Parameter_Name[1] = "V_P_MLINE";
-                MyOraDB.Parameter_Name[2] = "V_P_YMD";
+                MyOraDB.Parameter_Name[1] = "V_P_YMD";
+                MyOraDB.Parameter_Name[2] = "V_P_LOCATION";
                 MyOraDB.Parameter_Name[3] = "V_P_TRIP";
-                MyOraDB.Parameter_Name[4] = "V_P_STYLE_CD";
-                MyOraDB.Parameter_Name[5] = "V_P_LOCATION";
+               
             //    MyOraDB.Parameter_Name[4] = "V_P_CMP_CD";
-                MyOraDB.Parameter_Name[6] = "CV_1";
+                MyOraDB.Parameter_Name[4] = "CV_1";
                 // MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
 
                 MyOraDB.Parameter_Type[0] = (char)OracleType.VarChar;
                 MyOraDB.Parameter_Type[1] = (char)OracleType.VarChar;
                 MyOraDB.Parameter_Type[2] = (char)OracleType.VarChar;
                 MyOraDB.Parameter_Type[3] = (char)OracleType.VarChar;
-                MyOraDB.Parameter_Type[4] = (char)OracleType.VarChar;
-                MyOraDB.Parameter_Type[5] = (char)OracleType.VarChar;
+         
               //  MyOraDB.Parameter_Type[4] = (char)OracleType.VarChar;
-                MyOraDB.Parameter_Type[6] = (char)OracleType.Cursor;
+                MyOraDB.Parameter_Type[4] = (char)OracleType.Cursor;
 
-                MyOraDB.Parameter_Values[0] = v_LINE_CD;
-                MyOraDB.Parameter_Values[1] = v_MLINE_CD;
-                MyOraDB.Parameter_Values[2] = v_date;
+                MyOraDB.Parameter_Values[0] = LINE;
+                MyOraDB.Parameter_Values[1] = v_date;
+                MyOraDB.Parameter_Values[2] = v_p_location;
                 MyOraDB.Parameter_Values[3] = v_Trip;
-                MyOraDB.Parameter_Values[4] = v_STYLE_CD;
-                MyOraDB.Parameter_Values[5] = v_p_location;
+                
               //  MyOraDB.Parameter_Values[4] = v_CMP_CD_IN;
-                MyOraDB.Parameter_Values[6] = "";
+                MyOraDB.Parameter_Values[4] = "";
                 // MyOraDB.Parameter_Values[3] = "";
 
 

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.timerDuration = new System.Windows.Forms.Timer();
+            this.components = new System.ComponentModel.Container();
+            this.timerDuration = new System.Windows.Forms.Timer(this.components);
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.progressPanel1.AppearanceDescription.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.progressPanel1.AppearanceDescription.Options.UseFont = true;
             this.progressPanel1.AppearanceDescription.Options.UseForeColor = true;
-           // this.progressPanel1.BackgroundImage = global::FORM.Properties.Resources.loading1;
+            this.progressPanel1.BackgroundImage = global::FORM.Properties.Resources.loading1;
             this.progressPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.progressPanel1.BarAnimationElementThickness = 2;
             this.progressPanel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -80,6 +81,7 @@
             this.DoubleBuffered = true;
             this.Name = "WaitForm1";
             this.Text = "Form1";
+            this.UseWaitCursor = true;
             this.ResumeLayout(false);
 
         }
