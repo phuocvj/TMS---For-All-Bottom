@@ -29,6 +29,7 @@ namespace FORM
         int counter = 0;
         int len = 0;
         string txt;
+        bool isBack = false;
 
         int cCount = 0;
         #region Ora
@@ -186,9 +187,9 @@ namespace FORM
         {
             if (this.Visible)
             {
-               
 
 
+                cmdBack.Visible = isBack;
                 // Move left 40 pixels in 2 seconds.
                 cCount = 300;
                 tmrLoad.Start();
@@ -293,6 +294,16 @@ namespace FORM
                     break;
             }
 
+        }
+
+        private void FRM_TMS_HOME_Load(object sender, EventArgs e)
+        {
+            isBack = ComVar.Var._IsBack;
+        }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+            ComVar.Var.callForm = "back";
         }
 
         private void pictureBox6_MouseLeave(object sender, EventArgs e)

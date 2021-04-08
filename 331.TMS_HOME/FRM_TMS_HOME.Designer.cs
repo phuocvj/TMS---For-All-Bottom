@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_TMS_HOME));
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.cmdBack = new System.Windows.Forms.Button();
             this.btnTrackRPT = new System.Windows.Forms.Button();
             this.btnSQM = new System.Windows.Forms.Button();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -117,6 +118,7 @@
             // 
             // pnHeader
             // 
+            this.pnHeader.Controls.Add(this.cmdBack);
             this.pnHeader.Controls.Add(this.btnTrackRPT);
             this.pnHeader.Controls.Add(this.btnSQM);
             this.pnHeader.Controls.Add(this.labelControl4);
@@ -127,6 +129,21 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(1898, 74);
             this.pnHeader.TabIndex = 0;
+            // 
+            // cmdBack
+            // 
+            this.cmdBack.BackColor = System.Drawing.Color.Transparent;
+            this.cmdBack.BackgroundImage = global::FORM.Properties.Resources.Back_Icon;
+            this.cmdBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdBack.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.cmdBack.FlatAppearance.BorderSize = 0;
+            this.cmdBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdBack.Location = new System.Drawing.Point(1477, 3);
+            this.cmdBack.Name = "cmdBack";
+            this.cmdBack.Size = new System.Drawing.Size(74, 68);
+            this.cmdBack.TabIndex = 51;
+            this.cmdBack.UseVisualStyleBackColor = false;
+            this.cmdBack.Click += new System.EventHandler(this.cmdBack_Click);
             // 
             // btnTrackRPT
             // 
@@ -179,7 +196,7 @@
             this.labelControl4.LineVisible = true;
             this.labelControl4.Location = new System.Drawing.Point(767, 43);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(754, 33);
+            this.labelControl4.Size = new System.Drawing.Size(442, 33);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Transportation Situation By Real Time";
             this.labelControl4.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
@@ -767,6 +784,7 @@
             this.Name = "FRM_TMS_HOME";
             this.Text = "FRM_TMS_HOME";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FRM_TMS_HOME_Load);
             this.VisibleChanged += new System.EventHandler(this.FRM_TMS_HOME_VisibleChanged);
             this.tblMain.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
@@ -843,5 +861,6 @@
         private System.Windows.Forms.Button btnSQM;
         private System.Windows.Forms.Timer tmrTitle;
         private System.Windows.Forms.Button btnTrackRPT;
+        private System.Windows.Forms.Button cmdBack;
     }
 }

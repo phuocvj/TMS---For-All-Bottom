@@ -193,8 +193,8 @@ namespace FORM
                                 {
                                     X_Car4 = 975;
                                     Y_Car4 = 746;
-                                    btnCar3.Location = new Point(X_Car4, Y_Car4);
-                                    btnCar3.Text = "VJ3->VJ2";
+                                    btnCar4.Location = new Point(X_Car4, Y_Car4);
+                                    btnCar4.Text = "VJ3->VJ2";
                                     return;
                                 }
                                 else
@@ -208,8 +208,8 @@ namespace FORM
                             {
                                 X_Car4 = 975;
                                 Y_Car4 = 746;
-                                btnCar3.Location = new Point(ORI_CAR4.X, ORI_CAR4.Y);
-                                btnCar3.Text = "VJ3->VJ2";
+                                btnCar4.Location = new Point(ORI_CAR4.X, ORI_CAR4.Y);
+                                btnCar4.Text = "VJ3->VJ2";
                             }
 
                             if (btnCar4.Location.X <= 975 && btnCar4.Location.Y >= 746)  //VC: 789, 491  LT: 941, 802
@@ -676,7 +676,8 @@ namespace FORM
             try
             {
 
-                COM.OraDB MyOraDB = new COM.OraDB(1);
+                COM.OraDB MyOraDB = new COM.OraDB();
+                MyOraDB.ConnectName = COM.OraDB.ConnectDB.LMES;
                 System.Data.DataSet ds_ret;
 
                 string process_name = "SP_OUT_SCN_VJ1_VJ2";

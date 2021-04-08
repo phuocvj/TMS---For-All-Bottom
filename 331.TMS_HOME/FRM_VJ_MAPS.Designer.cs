@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tmrCarRun = new System.Windows.Forms.Timer();
+            this.components = new System.ComponentModel.Container();
+            this.tmrCarRun = new System.Windows.Forms.Timer(this.components);
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
-            this.tmrGetDepart = new System.Windows.Forms.Timer();
+            this.tmrGetDepart = new System.Windows.Forms.Timer(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
+            this.btnCar4 = new System.Windows.Forms.Button();
             this.btnCar = new System.Windows.Forms.Button();
             this.btnCar3 = new System.Windows.Forms.Button();
             this.btnCar2 = new System.Windows.Forms.Button();
-            this.btnCar4 = new System.Windows.Forms.Button();
             this.pnMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,23 @@
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1884, 1061);
             this.pnMain.TabIndex = 0;
+            // 
+            // btnCar4
+            // 
+            this.btnCar4.BackColor = System.Drawing.Color.Transparent;
+            this.btnCar4.BackgroundImage = global::FORM.Properties.Resources.car2;
+            this.btnCar4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCar4.FlatAppearance.BorderSize = 0;
+            this.btnCar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCar4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic);
+            this.btnCar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCar4.Location = new System.Drawing.Point(1505, 150);
+            this.btnCar4.Name = "btnCar4";
+            this.btnCar4.Size = new System.Drawing.Size(121, 70);
+            this.btnCar4.TabIndex = 177;
+            this.btnCar4.Tag = "3";
+            this.btnCar4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnCar4.UseVisualStyleBackColor = false;
             // 
             // btnCar
             // 
@@ -122,23 +140,6 @@
             this.btnCar2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnCar2.UseVisualStyleBackColor = false;
             this.btnCar2.Click += new System.EventHandler(this.btnCar_Click);
-            // 
-            // btnCar4
-            // 
-            this.btnCar4.BackColor = System.Drawing.Color.Transparent;
-            this.btnCar4.BackgroundImage = global::FORM.Properties.Resources.car2;
-            this.btnCar4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCar4.FlatAppearance.BorderSize = 0;
-            this.btnCar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCar4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic);
-            this.btnCar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCar4.Location = new System.Drawing.Point(1492, 120);
-            this.btnCar4.Name = "btnCar4";
-            this.btnCar4.Size = new System.Drawing.Size(121, 70);
-            this.btnCar4.TabIndex = 177;
-            this.btnCar4.Tag = "3";
-            this.btnCar4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnCar4.UseVisualStyleBackColor = false;
             // 
             // FRM_VJ_MAPS
             // 

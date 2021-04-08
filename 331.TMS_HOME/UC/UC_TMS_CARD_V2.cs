@@ -170,7 +170,8 @@ namespace FORM.UC
 
         private void btnHOME_Click(object sender, EventArgs e)
         {
-            ComVar.Var._bValue1 = true; //Sử dụng biến này để back về lại form này.
+            ComVar.Var._IsBack = true;
+               ComVar.Var._bValue1 = true; //Sử dụng biến này để back về lại form này.
             switch (_code)
             {
                 case "F1":

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
@@ -52,7 +51,7 @@
             this.separatorControl5 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl4 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
-            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
+            this.tmrLoad = new System.Windows.Forms.Timer();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblYesIncoming = new System.Windows.Forms.Label();
             this.lblTodayIncoming = new System.Windows.Forms.Label();
