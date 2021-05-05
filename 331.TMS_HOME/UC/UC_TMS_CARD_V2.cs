@@ -219,7 +219,7 @@ namespace FORM.UC
                     ComVar.Var._strValue3 = "OSP";
                     ComVar.Var._strValue4 = "OS";
                     ComVar.Var._strValue5 = "Outsole";
-                    ComVar.Var.callForm = "227";
+                    ComVar.Var.callForm = "376"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
 
                     break;
                 case "IP":

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
@@ -85,7 +84,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
-            this.tmrDate = new System.Windows.Forms.Timer(this.components);
+            this.tmrDate = new System.Windows.Forms.Timer();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
             this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
             this.lblPlan_Qty = new System.Windows.Forms.Label();
@@ -230,7 +229,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(440, 39);
             this.labelControl2.TabIndex = 39;
-            this.labelControl2.Text = "★ OUTGOING STATUS";
+            this.labelControl2.Text = " OUTGOING STATUS";
             this.labelControl2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // chartControl1
@@ -244,6 +243,7 @@
             xyDiagram1.AxisY.Title.Text = "Outgoing (Prs)";
             xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.EnableAxisXScrolling = true;
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Name = "Default Legend";
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -347,7 +347,7 @@
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(516, 39);
             this.labelControl1.TabIndex = 39;
-            this.labelControl1.Text = "★ INVENTORY STATUS";
+            this.labelControl1.Text = " INVENTORY STATUS";
             this.labelControl1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // lblComp_Inv
@@ -383,6 +383,8 @@
             xyDiagram2.AxisY.Title.Text = "Inventory (Prs)";
             xyDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
             xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram2.EnableAxisXScrolling = true;
+            xyDiagram2.EnableAxisXZooming = true;
             this.chartControl2.Diagram = xyDiagram2;
             this.chartControl2.Legend.Name = "Default Legend";
             this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -518,6 +520,7 @@
             xyDiagram3.AxisY.Label.TextPattern = "{V:#,#}";
             xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram3.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            xyDiagram3.EnableAxisXScrolling = true;
             this.chartControl5.Diagram = xyDiagram3;
             this.chartControl5.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
             this.chartControl5.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
@@ -551,7 +554,7 @@
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(442, 39);
             this.labelControl7.TabIndex = 63;
-            this.labelControl7.Text = "★ SHORTAGE STATUS";
+            this.labelControl7.Text = " SHORTAGE STATUS";
             this.labelControl7.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // gridControl3
@@ -697,7 +700,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(459, 39);
             this.labelControl3.TabIndex = 68;
-            this.labelControl3.Text = "★ OUTGOING DETAIL";
+            this.labelControl3.Text = " OUTGOING DETAIL";
             this.labelControl3.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // labelControl4
@@ -712,7 +715,7 @@
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(516, 39);
             this.labelControl4.TabIndex = 68;
-            this.labelControl4.Text = "★ INVENTORY BY STYLE CODE";
+            this.labelControl4.Text = " INVENTORY BY STYLE CODE";
             this.labelControl4.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // labelControl5
@@ -727,7 +730,7 @@
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(445, 39);
             this.labelControl5.TabIndex = 68;
-            this.labelControl5.Text = "★ SHORTAGE BY STYLE CODE";
+            this.labelControl5.Text = " SHORTAGE BY STYLE CODE";
             this.labelControl5.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // separatorControl1
@@ -837,7 +840,7 @@
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(397, 39);
             this.labelControl6.TabIndex = 39;
-            this.labelControl6.Text = "★ OVERAL SQM";
+            this.labelControl6.Text = " OVERAL SQM";
             this.labelControl6.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // chartControl3
@@ -851,6 +854,7 @@
             xyDiagram4.AxisY.Title.Text = "Ratio (%)";
             xyDiagram4.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
             xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram4.EnableAxisXScrolling = true;
             this.chartControl3.Diagram = xyDiagram4;
             this.chartControl3.Legend.Name = "Default Legend";
             this.chartControl3.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -1004,13 +1008,12 @@
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(459, 39);
             this.labelControl8.TabIndex = 68;
-            this.labelControl8.Text = "★ OVERALL DETAIL";
+            this.labelControl8.Text = " OVERALL DETAIL";
             this.labelControl8.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // FRM_DELI_STATUS_V5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1033);
             this.Controls.Add(this.gridControl4);

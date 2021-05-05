@@ -122,6 +122,49 @@ namespace FORM
             }
         }
 
+        public DataTable TMS_DELIVERY_STATUS_DETAIL_V6(string PROC_NAME, string ARG_QTYPE, string ARG_OP_CD, string ARG_CMP_CD, string ARG_YMD, string ARG_LINE)
+        {
+            try
+            {
+                COM.OraDB MyOraDB = new COM.OraDB();
+                System.Data.DataSet ds_ret;
+
+                string process_name = PROC_NAME;
+                MyOraDB.ReDim_Parameter(6);
+                MyOraDB.Process_Name = process_name;
+                MyOraDB.Parameter_Name[0] = "ARG_QTYPE";
+                MyOraDB.Parameter_Name[1] = "ARG_OP_CD";
+                MyOraDB.Parameter_Name[2] = "ARG_CMP_CD";
+                MyOraDB.Parameter_Name[3] = "ARG_YMD";
+                MyOraDB.Parameter_Name[4] = "ARG_LINE_CD";
+                MyOraDB.Parameter_Name[5] = "OUT_CURSOR";
+                
+
+                MyOraDB.Parameter_Type[0] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[4] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[5] = (char)OracleType.Cursor;
+     
+
+
+                MyOraDB.Parameter_Values[0] = ARG_QTYPE;
+                MyOraDB.Parameter_Values[1] = ARG_OP_CD;
+                MyOraDB.Parameter_Values[2] = ARG_CMP_CD;
+                MyOraDB.Parameter_Values[3] = ARG_YMD;
+                MyOraDB.Parameter_Values[4] = ARG_LINE;
+                MyOraDB.Parameter_Values[5] = "";
+                MyOraDB.Add_Select_Parameter(true);
+                ds_ret = MyOraDB.Exe_Select_Procedure();
+                if (ds_ret == null) return null;
+                return ds_ret.Tables[0];
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public DataTable GetDeliveryDetail(string ARG_FAC, string ARG_YMD, string ARG_LINE_CD)
         {
             try

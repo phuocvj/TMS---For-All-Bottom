@@ -287,6 +287,7 @@ namespace FORM
             //POPUP.ShowBeakForm();
             // FRM_DELI_STATUS DELI_STATUS = new FRM_DELI_STATUS();
             //  DELI_STATUS.ShowDialog();
+            ComVar.Var._IsBack = true;
             ComVar.Var._dValue1 = Set_rate;
             ComVar.Var._strValue1 = LINE_CD;
             ComVar.Var._strValue2 = LINE_NM;

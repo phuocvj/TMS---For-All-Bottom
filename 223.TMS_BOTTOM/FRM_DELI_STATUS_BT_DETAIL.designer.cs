@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
@@ -87,7 +86,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
-            this.tmrDate = new System.Windows.Forms.Timer(this.components);
+            this.tmrDate = new System.Windows.Forms.Timer();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
             this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
             this.lblPlan_Qty = new System.Windows.Forms.Label();
@@ -1073,10 +1072,9 @@
             this.labelControl8.Text = "★ OVERALL DETAIL";
             this.labelControl8.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
-            // FRM_DELI_STATUS_V5
+            // FRM_DELI_STATUS_BT_DETAIL
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1033);
             this.Controls.Add(this.gridControl4);

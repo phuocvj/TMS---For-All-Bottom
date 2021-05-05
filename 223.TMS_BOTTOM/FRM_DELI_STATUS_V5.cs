@@ -61,6 +61,8 @@ namespace FORM
                 chartControl1.Series[0].ArgumentDataMember = "LINE_NM";
                 chartControl1.Series[0].ValueDataMembers.AddRange(new string[] { "O_QTY" });
                 ((DevExpress.XtraCharts.XYDiagram)chartControl1.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
+
+                ((XYDiagram)chartControl1.Diagram).AxisX.VisualRange.SetMinMaxValues(ds.Tables[1].Rows[0]["LINE_NM"], ds.Tables[1].Rows[5]["LINE_NM"]);
             }
             catch { }
         }
@@ -114,6 +116,8 @@ namespace FORM
                 chartControl2.Series[0].ValueDataMembers.AddRange(new string[] { "WIP_QTY" });
                 ((DevExpress.XtraCharts.XYDiagram)chartControl2.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
 
+              
+
                 gridControl2.DataSource = dt;
                 for (int i = 0; i < gridView2.Columns.Count; i++)
                 {
@@ -131,6 +135,8 @@ namespace FORM
                     gridView2.Columns[i].AppearanceCell.TextOptions.HAlignment = HorzAlignment.Far;
                 }
                 gridView2.Columns["LINE_NM"].AppearanceCell.TextOptions.HAlignment = HorzAlignment.Center;
+
+                ((XYDiagram)chartControl2.Diagram).AxisX.VisualRange.SetMinMaxValues(dt.Rows[0]["LINE_NM"], dt.Rows[5]["LINE_NM"]);
             }
             catch (Exception ex) { chartControl2.DataSource = null; gridControl2.DataSource = null; }
         }
@@ -186,6 +192,8 @@ namespace FORM
                 ((XYDiagram)chartControl5.Diagram).AxisY.Title.Text = "Prs";
                 ((DevExpress.XtraCharts.XYDiagram)chartControl5.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
 
+                ((XYDiagram)chartControl5.Diagram).AxisX.VisualRange.SetMinMaxValues(ds.Tables[5].Rows[0]["LINE_NM"], ds.Tables[5].Rows[5]["LINE_NM"]);
+
             }
             catch { }
         }
@@ -200,6 +208,7 @@ namespace FORM
                 chartControl3.Series[0].ArgumentDataMember = "LINE_NM";
                 chartControl3.Series[0].ValueDataMembers.AddRange(new string[] { "RATIO" });
                 ((DevExpress.XtraCharts.XYDiagram)chartControl3.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
+               
                 gridControl4.DataSource = ds.Tables[3];
                 for (int i = 0; i < gridView4.Columns.Count; i++)
                 {
@@ -225,6 +234,8 @@ namespace FORM
 
                 }
                 lblAVG_BTS.Text = string.Concat(Math.Round(Convert.ToDouble(ds.Tables[3].Compute("AVG(RATIO)", "")), 1), "%");
+
+                ((XYDiagram)chartControl3.Diagram).AxisX.VisualRange.SetMinMaxValues(ds.Tables[3].Rows[0]["LINE_NM"], ds.Tables[3].Rows[5]["LINE_NM"]);
             }
             catch (Exception ex) { }
         }

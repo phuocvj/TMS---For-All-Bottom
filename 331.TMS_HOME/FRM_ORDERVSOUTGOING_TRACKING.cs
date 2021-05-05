@@ -81,6 +81,36 @@ namespace FORM
             if (retDS == null) return null;
             return retDS;
         }
+
+        public DataTable GET_LINE(string ARG_QTYPE)
+        {
+            try
+            {
+                COM.OraDB MyOraDB = new COM.OraDB();
+                System.Data.DataSet ds_ret;
+
+                string process_name = "MES.PKG_TMS_HOME.TMS_HOME_GET_LINE";
+                MyOraDB.ReDim_Parameter(2);
+                MyOraDB.Process_Name = process_name;
+                MyOraDB.Parameter_Name[0] = "ARG_QTYPE";
+                MyOraDB.Parameter_Name[1] = "OUT_CURSOR";
+
+                MyOraDB.Parameter_Type[0] = (char)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (char)OracleType.Cursor;
+
+                MyOraDB.Parameter_Values[0] = ARG_QTYPE;
+                MyOraDB.Parameter_Values[1] = "";
+
+                MyOraDB.Add_Select_Parameter(true);
+                ds_ret = MyOraDB.Exe_Select_Procedure();
+                if (ds_ret == null) return null;
+                return ds_ret.Tables[0];
+            }
+            catch
+            {
+                return null;
+            }
+        }
         private DataTable GetDataCboPlant()
         {
             DataTable dt = new DataTable();
@@ -113,6 +143,37 @@ namespace FORM
                     btn.Appearance.ForeColor = Color.Blue;
             }
         }
+        //private void Trip_set()
+        //{
+        //    foreach (DevExpress.XtraEditors.SimpleButton btn in pnTrip.Controls)
+        //    {
+        //        btn.Appearance.ForeColor = Color.Black;
+        //    }
+        //    currhour = Int32.Parse(DateTime.Now.ToString("HHmm"));
+        //    if ((currhour >= 545) && (currhour < 745))
+        //    {
+        //        VTrip = "001";
+        //        lblTripTime.Text = "05:45";
+
+        //    }
+        //    else if ((currhour >= 730) && (currhour < 945))
+        //    {
+        //        VTrip = "002";
+        //        lblTripTime.Text = "07:30";
+        //    }
+        //    else if ((currhour >= 945) && (currhour < 1145))
+        //    {
+        //        VTrip = "003";
+        //        lblTripTime.Text = "09:45";
+
+        //    }
+        //    else if (currhour >= 1145)
+        //    {
+        //        VTrip = "004";
+        //        lblTripTime.Text = "11:45";
+        //    }
+        //    MarkTripButton();
+        //}
         private void Trip_set()
         {
             foreach (DevExpress.XtraEditors.SimpleButton btn in pnTrip.Controls)
@@ -120,27 +181,62 @@ namespace FORM
                 btn.Appearance.ForeColor = Color.Black;
             }
             currhour = Int32.Parse(DateTime.Now.ToString("HHmm"));
-            if ((currhour >= 545) && (currhour < 745))
+            //-- load trip capa--
+
+            if ((VLine == "201") || (VLine == "202"))
             {
-                VTrip = "001";
-                lblTripTime.Text = "05:45";
+
+                if ((currhour >= 545) && (currhour < 745))
+                {
+                    VTrip = "001";
+                    lblTripTime.Text = "05:45";
+
+                }
+                else if ((currhour >= 730) && (currhour < 945))
+                {
+                    VTrip = "002";
+                    lblTripTime.Text = "07:30";
+                }
+                else if ((currhour >= 945) && (currhour < 1145))
+                {
+                    VTrip = "003";
+                    lblTripTime.Text = "09:45";
+                }
+                else if (currhour >= 1145)
+                {
+                    VTrip = "004";
+                    lblTripTime.Text = "11:45";
+                }
 
             }
-            else if ((currhour >= 730) && (currhour < 945))
+            else  //vj1
             {
-                VTrip = "002";
-                lblTripTime.Text = "07:30";
-            }
-            else if ((currhour >= 945) && (currhour < 1145))
-            {
-                VTrip = "003";
-                lblTripTime.Text = "09:45";
+                if ((currhour >= 600) && (currhour < 900))
+                {
+                   VTrip = "001";
+                    lblTripTime.Text = "06:00";
 
-            }
-            else if (currhour >= 1145)
-            {
-                VTrip = "004";
-                lblTripTime.Text = "11:45";
+                }
+                else if ((currhour >= 900) && (currhour <= 1030))
+                {
+                    VTrip = "002";
+                    lblTripTime.Text = "09:00";
+                }
+                else if ((currhour >= 1100) && (currhour <= 1245))
+                {
+                   VTrip= "003";
+                    lblTripTime.Text = "11:00";
+                }
+                else if ((currhour >= 1315) && (currhour <= 1445))
+                {
+                    VTrip= "004";
+                    lblTripTime.Text = "13:15";
+                }
+                else
+                {
+                    VTrip = "000";
+                    lblTripTime.Text = "";
+                }
             }
             MarkTripButton();
         }
@@ -178,160 +274,289 @@ namespace FORM
             grdBase.DataSource = dtgrid;
             Format_Grid();
         }
+        //private void Format_Grid()
+        //{
+        //    try
+        //    {
+        //        gvwBase.BeginUpdate();
+        //        #region replace
+        //        for (int i = 0; i <= gvwBase.RowCount - 1; i++)
+        //        {
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "SET_ORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Order By Set (Prs)");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "SET_ORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Order By Set (Prs)");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "TOTAL_OUTGOING_PRS")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Total Outgoing (Prs)");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "TOTAL_OUTGOING_PRS")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Total Outgoing (Prs)");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_TOTAL")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "%");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_TOTAL")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "IN_ORDER_BY_SET")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing In Order");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS1")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "By Set (Prs)");
+
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS1.2")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "UnSet/2 (Prs)");
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_INORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing In Order");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_INORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "NOT_IN_ORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing Not In Order");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS2")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Sum/2 (Prs)");
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_NOTORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing Not In Order");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_NOTORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "OUT_IN_ORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Order In Detail");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "OUT_NOT_ORDER")
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Not Order In Detail");
+        //            }
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Contains("Y"))
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Replace("-Y", ""));
+        //            }
+
+        //            if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Contains("N"))
+        //            {
+        //                gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Replace("-N", ""));
+        //            }
+        //        }
+
+        //        #endregion replace
+        //        _Helper = new MyCellMergeHelper(gvwBase);
+        //        _Helper.AddMergedCell(0, 0, 1, "Order By Set (Prs)");
+        //        _Helper.AddMergedCell(1, 0, 1, "Total Outgoing (Prs)");
+        //        _Helper.AddMergedCell(2, 0, 1, "%");
+
+
+        //        for (int i = 0; i < gvwBase.Columns.Count; i++)
+        //        {
+        //            gvwBase.Columns[i].AppearanceCell.Options.UseTextOptions = true;
+        //            gvwBase.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        //            gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        //            gvwBase.Columns[i].OptionsFilter.AllowFilter = false;
+        //            gvwBase.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+
+        //            gvwBase.ColumnPanelRowHeight = 25;
+        //            gvwBase.RowHeight = 25;
+        //            gvwBase.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+        //            if (i <= 1)
+        //            {
+        //                gvwBase.Columns[i].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+        //                gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+        //            }
+        //            else
+        //            {
+        //                gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+        //                gvwBase.Columns[i].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+        //                gvwBase.Columns[i].DisplayFormat.FormatString = "#,###.##";
+        //            }
+        //            gvwBase.Columns[i].Caption = gvwBase.Columns[i].FieldName.ToString().Replace("'", "");
+        //        }
+        //        gvwBase.Columns[0].Caption = gvwBase.Columns[0].FieldName.ToString().Replace("CMP1", "Item");
+        //        gvwBase.Columns[1].Caption = gvwBase.Columns[1].FieldName.ToString().Replace("CMP2", "Item");
+
+        //        gvwBase.Appearance.Row.Font = new System.Drawing.Font("DotumChe", 10F, System.Drawing.FontStyle.Regular);
+        //        gvwBase.BestFitColumns();
+        //        gvwBase.EndUpdate();
+        //    }
+        //    catch { }
+        //}
         private void Format_Grid()
         {
-            try
+            gvwBase.BeginUpdate();
+            #region replace
+
+
+            for (int i = 0; i <= gvwBase.RowCount - 1; i++)
             {
-                gvwBase.BeginUpdate();
-                #region replace
-                for (int i = 0; i <= gvwBase.RowCount - 1; i++)
+                for (int j = 0; j <= 2; j++)
                 {
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "SET_ORDER")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "TOTAL_ORDER")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Order By Set (Prs)");
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "Total Order");
                     }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "SET_ORDER")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "OUT_IN_ORDER")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Order By Set (Prs)");
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "Outgoing In Order");
                     }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "TOTAL_OUTGOING_PRS")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "OUT_IN_ORDER_IN_TIME")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Total Outgoing (Prs)");
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "On Time");
                     }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "TOTAL_OUTGOING_PRS")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "OUT_IN_ORDER_NOT_IN_TIME")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Total Outgoing (Prs)");
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "Not On Time");
                     }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_TOTAL")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "OUT_WITHOUT_ORDER")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "%");
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "Outgoing Without Order");
                     }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_TOTAL")
+                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns[j]).ToString() == "TOTAL_OUT_IN_TRIP")
                     {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "IN_ORDER_BY_SET")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing In Order");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS1")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "By Set (Prs)");
-
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS1.2")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "UnSet/2 (Prs)");
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_INORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing In Order");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_INORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "NOT_IN_ORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing Not In Order");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "OUTGOING_PRS2")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "Sum/2 (Prs)");
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "PER_NOTORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Outgoing Not In Order");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString() == "PER_NOTORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], "%");
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "OUT_IN_ORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Order In Detail");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP1"]).ToString() == "OUT_NOT_ORDER")
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP1"], "Not Order In Detail");
-                    }
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Contains("Y"))
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Replace("-Y", ""));
-                    }
-
-                    if (gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Contains("N"))
-                    {
-                        gvwBase.SetRowCellValue(i, gvwBase.Columns["CMP2"], gvwBase.GetRowCellValue(i, gvwBase.Columns["CMP2"]).ToString().Replace("-N", ""));
+                        gvwBase.SetRowCellValue(i, gvwBase.Columns[j], "Total Outgoing");
                     }
                 }
 
-                #endregion replace
-                _Helper = new MyCellMergeHelper(gvwBase);
-                _Helper.AddMergedCell(0, 0, 1, "Order By Set (Prs)");
-                _Helper.AddMergedCell(1, 0, 1, "Total Outgoing (Prs)");
-                _Helper.AddMergedCell(2, 0, 1, "%");
+
+            }
 
 
-                for (int i = 0; i < gvwBase.Columns.Count; i++)
+
+
+
+            //}
+
+            #endregion replace
+
+            _Helper = new MyCellMergeHelper(gvwBase);
+            _Helper.AddMergedCell(0, 0, 1, "Total Order");
+
+            //_Helper.AddMergedCell(4, 0, 1, "Outgoing Without Order");
+            //_Helper.AddMergedCell(5, 0, 1, "Outgoing Without Order");
+            //_Helper.AddMergedCell(6, 0, 1, "Total Outgoing");
+            //_Helper.AddMergedCell(7, 0, 1, "Total Outgoing");
+
+
+
+
+
+
+
+
+            for (int i = 0; i < gvwBase.Columns.Count; i++)
+            {
+                gvwBase.Columns[i].AppearanceCell.Options.UseTextOptions = true;
+                gvwBase.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+                gvwBase.Columns[i].OptionsFilter.AllowFilter = false;
+                gvwBase.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+                gvwBase.Columns[i].OptionsColumn.AllowEdit = false;
+                gvwBase.Columns[i].OptionsColumn.ReadOnly = true;
+                gvwBase.ColumnPanelRowHeight = 25;
+                gvwBase.RowHeight = 30;
+                gvwBase.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+                if (i <= 2)
                 {
-                    gvwBase.Columns[i].AppearanceCell.Options.UseTextOptions = true;
-                    gvwBase.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-                    gvwBase.Columns[i].OptionsFilter.AllowFilter = false;
-                    gvwBase.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-
-                    gvwBase.ColumnPanelRowHeight = 25;
-                    gvwBase.RowHeight = 25;
-                    gvwBase.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-
-                    if (i <= 1)
+                    gvwBase.Columns[i].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                    if (i < 2)
                     {
-                        gvwBase.Columns[i].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
                         gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
                     }
                     else
-                    {
                         gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-                        gvwBase.Columns[i].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                        gvwBase.Columns[i].DisplayFormat.FormatString = "#,###.##";
-                    }
-                    gvwBase.Columns[i].Caption = gvwBase.Columns[i].FieldName.ToString().Replace("'", "");
                 }
-                gvwBase.Columns[0].Caption = gvwBase.Columns[0].FieldName.ToString().Replace("CMP1", "Item");
-                gvwBase.Columns[1].Caption = gvwBase.Columns[1].FieldName.ToString().Replace("CMP2", "Item");
+                else
+                {
+                    gvwBase.Columns[i].OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+                    gvwBase.Columns[i].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                    gvwBase.Columns[i].DisplayFormat.FormatString = "#,###.##";
+                }
 
-                gvwBase.Appearance.Row.Font = new System.Drawing.Font("DotumChe", 10F, System.Drawing.FontStyle.Regular);
-                gvwBase.BestFitColumns();
-                gvwBase.EndUpdate();
+
+
+                gvwBase.Columns[1].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+                gvwBase.Columns[i].Caption = gvwBase.Columns[i].FieldName.ToString().Replace("'", "");
+
+
+
+
+
             }
-            catch { }
+            gvwBase.Columns[0].Caption = gvwBase.Columns[0].FieldName.ToString().Replace("CMP1", "Item");
+            gvwBase.Columns[1].Caption = gvwBase.Columns[1].FieldName.ToString().Replace("CMP2", "Item");
+            gvwBase.Columns[2].Caption = gvwBase.Columns[2].FieldName.ToString().Replace("CMP3", "Unit");
+
+            gvwBase.Appearance.Row.Font = new System.Drawing.Font("DotumChe", 10F, System.Drawing.FontStyle.Regular);
+            gvwBase.BestFitColumns();
+
+            // gvwBase.OptionsView.ColumnAutoWidth = false;
+            gvwBase.EndUpdate();
         }
         private void gvwBase_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             double temp = 0.0;
-            if ((gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP2"]).ToString() == "%") && (gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP1"]).ToString() == "Outgoing In Order"))
+
+
+            if ((gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP3"]).ToString() == "Prs") && (gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP2"]).ToString() == "Total Order"))
+            {
+                e.Appearance.BackColor = Color.LightYellow;
+
+            }
+
+            if ((gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP3"]).ToString() == "%") && (gvwBase.GetRowCellDisplayText(e.RowHandle, gvwBase.Columns["CMP2"]).ToString() == "%"))
             {
                 if (e.Column.AbsoluteIndex >= 2 && e.CellValue != null)
                 {
                     double.TryParse(e.CellValue.ToString(), out temp); //out
-                    if (temp > 0 && temp < 95)
+
+                    if (temp > 0 && temp < 30)
+                    {
+                        e.Appearance.BackColor = Color.Black;
+                        e.Appearance.ForeColor = Color.White;
+                    }
+
+                    else if (temp >= 30 && temp < 70)
                     {
                         e.Appearance.BackColor = Color.Red;
                         e.Appearance.ForeColor = Color.White;
                     }
-                    else if (temp >= 95 && temp < 98)
+                    else if (temp >= 70 && temp < 90)
                     {
+
                         e.Appearance.BackColor = Color.Yellow;
                         e.Appearance.ForeColor = Color.Black;
                     }
-                    else if (temp >= 98)
+                    else if (temp >= 90)
                     {
+
                         e.Appearance.BackColor = Color.LightGreen;
                         e.Appearance.ForeColor = Color.Black;
                     }
@@ -347,10 +572,12 @@ namespace FORM
             {
                 LoadControl();
                 btnLD.BackColor = Color.Yellow;
-                cboPlant.DataSource = GetDataCboPlant();
-                cboPlant.DisplayMember = "PLANT_NM";
-                cboPlant.ValueMember = "PLANT_CD";
-                VLine = "201";
+                DataTable dtLine = GET_LINE("Q");
+                cboPlant.DataSource = dtLine; //GetDataCboPlant();
+                cboPlant.DisplayMember = "LINE_NAME";
+                cboPlant.ValueMember = "LINE_CD";
+                if (dtLine == null) return;
+                VLine = dtLine.Rows[0][0].ToString();
                 Trip_set();
                 DataSet ds = SELECT_DATA("Q", VDateF, VDateT, VLine, VTrip);
                 DataTable dtGrid = new DataTable();
@@ -450,7 +677,8 @@ namespace FORM
                 splashScreenManager1.CloseWaitForm();
                 this.Cursor = Cursors.Default;
             }
-            catch {
+            catch
+            {
                 splashScreenManager1.CloseWaitForm();
                 this.Cursor = Cursors.Default;
             }
@@ -462,24 +690,24 @@ namespace FORM
                 if (VTrip == "001")
                 {
                     lblTripTime.Text = "05:45";
-                 //   LblScantime.Text = "06:00 ~ 07:44";
+                    //   LblScantime.Text = "06:00 ~ 07:44";
 
                 }
                 else if (VTrip == "002")
                 {
                     lblTripTime.Text = "07:30";
-                  //  LblScantime.Text = "07:45 ~ 09:00";
+                    //  LblScantime.Text = "07:45 ~ 09:00";
                 }
 
                 else if (VTrip == "003")
                 {
                     lblTripTime.Text = "09:45";
-                   // LblScantime.Text = "09:45 ~ 11:59";
+                    // LblScantime.Text = "09:45 ~ 11:59";
                 }
                 else if (VTrip == "004")
                 {
                     lblTripTime.Text = "11:45";
-                   // LblScantime.Text = "12:00 ~ 13:30";
+                    // LblScantime.Text = "12:00 ~ 13:30";
                 }
 
 
@@ -493,7 +721,7 @@ namespace FORM
                 else if (VTrip == "002")
                 {
                     lblTripTime.Text = "09:00";
-                  //  LblScantime.Text = "09:00 ~ 10:30";
+                    //  LblScantime.Text = "09:00 ~ 10:30";
 
                 }
                 else if (VTrip == "003")
@@ -504,12 +732,12 @@ namespace FORM
                 else if (VTrip == "004")
                 {
                     lblTripTime.Text = "13:15";
-                   // LblScantime.Text = "13:15 ~ 14:45";
+                    // LblScantime.Text = "13:15 ~ 14:45";
                 }
 
             }
         }
-        
+
         private void cboPlant_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

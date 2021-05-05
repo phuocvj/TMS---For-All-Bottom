@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_TMS_HOME));
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.pnHeader = new System.Windows.Forms.Panel();
@@ -68,11 +69,11 @@
             this.tblCard = new System.Windows.Forms.TableLayoutPanel();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tmrLoad = new System.Windows.Forms.Timer();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);
-            this.tmrTitle = new System.Windows.Forms.Timer();
+            this.tmrTitle = new System.Windows.Forms.Timer(this.components);
             this.tblMain.SuspendLayout();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
@@ -163,6 +164,7 @@
             this.btnTrackRPT.TabIndex = 5;
             this.btnTrackRPT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTrackRPT.UseVisualStyleBackColor = false;
+            this.btnTrackRPT.Visible = false;
             this.btnTrackRPT.Click += new System.EventHandler(this.btnTrackRPT_Click);
             // 
             // btnSQM
