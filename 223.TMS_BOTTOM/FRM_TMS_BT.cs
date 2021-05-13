@@ -294,7 +294,8 @@ namespace FORM
             if (button_tag.Equals("227") && ComVar.Var._bValue2) //ComVar.Var._bValue2 Từ TMS Cockpit gọi qua, Bvalue2 = true.
                 ComVar.Var.callForm = button_tag;
             else
-                ComVar.Var.callForm = "260";
+                ComVar.Var.callForm = "377"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
+                                             //ComVar.Var.callForm = "260";
             ComVar.Var._bValue1 = false;
 
 
@@ -329,7 +330,8 @@ namespace FORM
 
         private void cmdBack_Click(object sender, EventArgs e)
         {
-            ComVar.Var.callForm = "342";
+            ComVar.Var.callForm = "back";
+            tmrDate.Stop();
         }
     }
 }

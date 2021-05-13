@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Base>
 	<MAIN>
-		<grpForm>TMS_HOME</grpForm>
+		<grpForm>TMS_BT</grpForm>
 		<FlashScreen>false</FlashScreen>
 		<Auto_Download>false</Auto_Download>
 	     	<OP_CD>IPP</OP_CD>

@@ -158,6 +158,12 @@
     <Compile Include="FRM_DELI_STATUS_BT_DETAIL.designer.cs">
       <DependentUpon>FRM_DELI_STATUS_BT_DETAIL.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_DELI_STATUS_V6_DETAIL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_DELI_STATUS_V6_DETAIL.Designer.cs">
+      <DependentUpon>FRM_DELI_STATUS_V6_DETAIL.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRM_DELI_STATUS_V6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FRM_DELI_STATUS_BT_DETAIL.resx">
       <DependentUpon>FRM_DELI_STATUS_BT_DETAIL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_DELI_STATUS_V6_DETAIL.resx">
+      <DependentUpon>FRM_DELI_STATUS_V6_DETAIL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_DELI_STATUS_V6.resx">
       <DependentUpon>FRM_DELI_STATUS_V6.cs</DependentUpon>

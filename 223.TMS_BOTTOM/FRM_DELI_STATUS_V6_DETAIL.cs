@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace FORM
 {
-    public partial class FRM_DELI_STATUS_V6 : Form
+    public partial class FRM_DELI_STATUS_V6_DETAIL : Form
     {
-        public FRM_DELI_STATUS_V6()
+        public FRM_DELI_STATUS_V6_DETAIL()
         {
             InitializeComponent();
             tmrDate.Stop();
@@ -172,7 +172,7 @@ namespace FORM
                     chartOutgoing.DataSource = boundTable;
                     chartOutgoing.Series[0].ArgumentDataMember = "DAYDAY";
                     chartOutgoing.Series[0].ValueDataMembers.AddRange(new string[] { "O_QTY" });
-                    chartOutgoing.Titles[0].Text = "Shortage Status By Assembly Day";
+                    chartOutgoing.Titles[0].Text = "Outgoing Status By Assembly Day";
                     ((DevExpress.XtraCharts.XYDiagram)chartOutgoing.Diagram).AxisX.Title.Text = "Assembly Day";
 
                     ((DevExpress.XtraCharts.XYDiagram)chartOutgoing.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
@@ -230,7 +230,7 @@ namespace FORM
 
                     ((XYDiagram)chartShortage.Diagram).AxisY.Title.Visibility = DefaultBoolean.True;
                     ((XYDiagram)chartShortage.Diagram).AxisY.Title.Text = "Prs";
-                    chartShortage.Titles[0].Text = "Inventory Status By Assembly Day";
+                    chartShortage.Titles[0].Text = "Shortage Status By Assembly Day";
                     ((DevExpress.XtraCharts.XYDiagram)chartShortage.Diagram).AxisX.Title.Text = "Style Code";
                     ((DevExpress.XtraCharts.XYDiagram)chartShortage.Diagram).AxisX.QualitativeScaleOptions.AutoGrid = false;
                 }
@@ -373,9 +373,10 @@ namespace FORM
             {
                 cAnimated = 0;
                 tmrAnimation.Stop();
-                
-                    BindingData(); //Get Data for All Factory
-                
+                //if (ComVar.Var._strValue1.Equals("ALL"))
+                //    BindingData(); //Get Data for All Factory
+                //else
+                    BindingData2(); //Get Data for Each workshop detail
             }
         }
     }

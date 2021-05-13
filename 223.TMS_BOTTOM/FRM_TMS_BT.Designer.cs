@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
@@ -38,7 +39,7 @@
             DevExpress.XtraCharts.PieSpinAnimation pieSpinAnimation2 = new DevExpress.XtraCharts.PieSpinAnimation();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblDate = new System.Windows.Forms.Label();
-            this.tmrDate = new System.Windows.Forms.Timer();
+            this.tmrDate = new System.Windows.Forms.Timer(this.components);
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FORM.WaitForm1), true, true);

@@ -228,7 +228,8 @@ namespace FORM.UC
                     ComVar.Var._strValue3 = "IPP";
                     ComVar.Var._strValue4 = "IP";
                     ComVar.Var._strValue5 = "IP";
-                    ComVar.Var.callForm = "227";
+                    // ComVar.Var.callForm = "227";
+                    ComVar.Var.callForm = "376"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
                     break;
                 case "PH":
                     ComVar.Var._strValue1 = "ALL";
@@ -237,7 +238,8 @@ namespace FORM.UC
                     ComVar.Var._strValue3 = "PHP";
                     ComVar.Var._strValue4 = "PH";
                     ComVar.Var._strValue5 = "Phylon";
-                    ComVar.Var.callForm = "227";
+                    //ComVar.Var.callForm = "227";
+                    ComVar.Var.callForm = "376"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
                     break;
                 case "PU":
                     ComVar.Var._strValue1 = "ALL";
@@ -246,7 +248,8 @@ namespace FORM.UC
                     ComVar.Var._strValue3 = "PUP";
                     ComVar.Var._strValue4 = "PU";
                     ComVar.Var._strValue5 = "PU";
-                    ComVar.Var.callForm = "227";
+                    // ComVar.Var.callForm = "227";
+                    ComVar.Var.callForm = "376"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
                     break;
                 case "DMP":
                     ComVar.Var._strValue1 = "ALL";
@@ -254,7 +257,8 @@ namespace FORM.UC
                     ComVar.Var._strValue3 = "DMP";
                     ComVar.Var._strValue4 = "DMP";
                     ComVar.Var._strValue5 = "DMP";
-                    ComVar.Var.callForm = "227";
+                    // ComVar.Var.callForm = "227";
+                    ComVar.Var.callForm = "376"; //Phước Update lại form Mới 376 (2021/05/05) Update trước cho Outsole
                     break;
                 default:
                     break;

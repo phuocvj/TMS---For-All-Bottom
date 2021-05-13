@@ -1,6 +1,6 @@
 ﻿namespace FORM
 {
-    partial class FRM_DELI_STATUS_V6
+    partial class FRM_DELI_STATUS_V6_DETAIL
     {
         /// <summary>
         /// Required designer variable.
