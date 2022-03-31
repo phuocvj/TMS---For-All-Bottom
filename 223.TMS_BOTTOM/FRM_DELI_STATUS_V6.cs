@@ -44,8 +44,8 @@ namespace FORM
                 lblInventory.Text = "INVENTORY";
                 lblShortage.Text = "SHORTAGE";
                 if (ComVar.Var._strValue1.Equals("ALL"))
-                 dt = db.TMS_DELIVERY_STATUS_DETAIL_V6("MES.PKG_TMS_DASHBOARD.TMS_GET_DELI_STATUS_V6", Qtype, ComVar.Var._strValue3, ComVar.Var._strValue4, DateTime.Now.ToString("yyyyMMdd"), ComVar.Var._strValue1);
-               
+                    dt = db.TMS_DELIVERY_STATUS_DETAIL_V6("MES.PKG_TMS_DASHBOARD.TMS_GET_DELI_STATUS_V6", Qtype, ComVar.Var._strValue3, ComVar.Var._strValue4, DateTime.Now.ToString("yyyyMMdd"), ComVar.Var._strValue1);
+
                 switch (Qtype)
                 {
                     case "INVENTORY":
@@ -55,11 +55,12 @@ namespace FORM
                         {
                             foreach (DataRow dr in dt.Rows)
                             {
-                                InvQty += Convert.ToInt32(dr["WIP_QTY"]);
+                                if (!string.IsNullOrEmpty(dr["LINE_NM"].ToString()))
+                                    InvQty += Convert.ToInt32(dr["WIP_QTY"]);
                             }
                             lblInventory_Total.Text = string.Format("{0:n0}", InvQty);
                         }
-                        
+
                         chartINV.DataSource = dt;
                         chartINV.Series[0].ArgumentDataMember = "LINE_NM";
                         chartINV.Series[0].ValueDataMembers.AddRange(new string[] { "WIP_QTY" });
@@ -80,11 +81,13 @@ namespace FORM
                         break;
                     case "SHORTAGE":
 
-                        int shrQty = 0,planQty=0;
+                        int shrQty = 0, planQty = 0;
                         lblShortage_Total.Text = "0";
                         lblPlan_Total.Text = "0";
+                        DataTable dtTemp = new DataTable();
                         if (dt.Rows.Count > 0)
                         {
+                            dtTemp = dt.Select("SHR_QTY>0","LINE_CD").CopyToDataTable();
                             foreach (DataRow dr in dt.Rows)
                             {
                                 shrQty += Convert.ToInt32(dr["SHR_QTY"]);
@@ -93,7 +96,7 @@ namespace FORM
                             lblShortage_Total.Text = string.Format("{0:n0}", shrQty);
                             lblPlan_Total.Text = string.Format("{0:n0}", planQty);
                         }
-                        chartShortage.DataSource = dt;
+                        chartShortage.DataSource = dtTemp;
                         chartShortage.Series[0].ArgumentDataMember = "LINE_NM";
                         chartShortage.Series[0].ValueDataMembers.AddRange(new string[] { "PLAN_QTY" });
                         chartShortage.Series[1].ArgumentDataMember = "LINE_NM";
@@ -112,16 +115,16 @@ namespace FORM
                 }
                 splashScreenManager1.CloseWaitForm();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 splashScreenManager1.CloseWaitForm();
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
         private async void BindingData()
         {
-         
+
             var Task1 = BindingData4Chart("INVENTORY");
             var Task2 = BindingData4Chart("OUTGOING");
             var Task3 = BindingData4Chart("SHORTAGE");
@@ -240,7 +243,7 @@ namespace FORM
             catch//(Exception ex)
             {
                 splashScreenManager1.CloseWaitForm();
-              //  MessageBox.Show(ex.Message);
+                //  MessageBox.Show(ex.Message);
             }
         }
         public DataTable LINQResultToDataTable<T>(IEnumerable<T> Linqlist)
@@ -373,9 +376,9 @@ namespace FORM
             {
                 cAnimated = 0;
                 tmrAnimation.Stop();
-                
-                    BindingData(); //Get Data for All Factory
-                
+
+                BindingData(); //Get Data for All Factory
+
             }
         }
     }

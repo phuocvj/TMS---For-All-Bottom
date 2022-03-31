@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Base>
 	<MAIN>
-		<grpForm>TMS_BT</grpForm>
+		<grpForm>TMS_HOME</grpForm>
 		<FlashScreen>false</FlashScreen>
 		<Auto_Download>false</Auto_Download>
 	     	<OP_CD>IPP</OP_CD>
@@ -15,7 +15,7 @@
 	</MAIN>
   
 	<Auto_Download>
-		<grpForm>TMS_BT</grpForm>
+		<grpForm>TMS_HOME</grpForm>
 	</Auto_Download>
 	<GMES>
 		<PROCESS_NAME>JBrowser6</PROCESS_NAME>

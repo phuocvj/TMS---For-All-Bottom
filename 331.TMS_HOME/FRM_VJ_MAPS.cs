@@ -223,7 +223,7 @@ namespace FORM
                         else
                         { btnCar4.Location = new Point(ORI_CAR4.X, ORI_CAR4.Y); btnCar4.Text = "VJ3->VJ2"; }
                     }
-                    catch { }
+                    catch(Exception ex) { }
                 });
         }
 
